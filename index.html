@@ -959,6 +959,157 @@
     .heatmap-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
+
+  /* ── PROBLEM ─────────────────────────────────────────────────────── */
+  .problem-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; margin-bottom: 2rem;
+  }
+  .problem-card {
+    border-radius: 10px; padding: 1.4rem; border: 1.5px solid var(--border);
+  }
+  .problem-card--stat { background: var(--navy); border-color: var(--navy); }
+  .problem-stat {
+    font-family: var(--font-serif); font-size: 2.2rem;
+    color: var(--gold); line-height: 1; margin-bottom: 0.3rem;
+  }
+  .problem-stat-label {
+    font-size: 0.72rem; font-weight: 600; color: var(--sky);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 0.7rem; line-height: 1.3;
+  }
+  .problem-desc { font-size: 0.8rem; color: rgba(214,228,240,0.75); line-height: 1.55; }
+  .problem-status-quo { background: var(--pale); border-radius: 10px; padding: 1.4rem 1.6rem; }
+  .problem-sq-title {
+    font-family: var(--font-serif); font-size: 1rem;
+    color: var(--navy); margin-bottom: 1rem;
+  }
+  .problem-sq-grid {
+    display: grid; grid-template-columns: repeat(2,1fr); gap: 0.8rem;
+  }
+  .problem-sq-item {
+    display: flex; gap: 0.7rem; align-items: flex-start;
+  }
+  .problem-sq-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .problem-sq-text { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── SOLUTION ────────────────────────────────────────────────────── */
+  .solution-layers {
+    display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.8rem;
+  }
+  .solution-layer {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px; padding: 1.3rem 1.5rem;
+  }
+  .solution-layer-num {
+    font-family: var(--font-serif); font-size: 2rem;
+    color: var(--gold); opacity: 0.5; flex-shrink: 0; line-height: 1;
+    min-width: 40px;
+  }
+  .solution-layer-title {
+    font-family: var(--font-serif); font-size: 1.1rem;
+    color: var(--white); margin-bottom: 0.4rem;
+  }
+  .solution-layer-desc { font-size: 0.82rem; color: var(--sky); line-height: 1.6; }
+  .solution-path {
+    background: rgba(212,168,71,.08); border: 1px solid rgba(212,168,71,.25);
+    border-radius: 8px; padding: 1.1rem 1.5rem;
+  }
+  .solution-path-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .solution-path-steps {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .solution-path-step {
+    text-align: center; padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,.15); border-radius: 6px;
+  }
+  .solution-path-step--active {
+    background: rgba(212,168,71,.15); border-color: rgba(212,168,71,.4);
+  }
+  .solution-path-year {
+    font-size: 0.63rem; color: var(--sky); letter-spacing: 0.06em;
+    text-transform: uppercase; margin-bottom: 0.2rem;
+  }
+  .solution-path-cat { font-size: 0.85rem; color: var(--white); font-weight: 600; }
+  .solution-path-arrow { color: var(--gold); font-size: 1.2rem; }
+
+  /* ── WHY NOW ─────────────────────────────────────────────────────── */
+  .whynow-grid {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .whynow-card {
+    border-radius: 10px; padding: 1.2rem; border: 1.5px solid var(--border);
+    background: var(--pale); border-top: 3px solid var(--border);
+  }
+  .whynow-card--live  { border-top-color: #E74C3C; }
+  .whynow-card--signal { border-top-color: var(--gold); }
+  .whynow-status {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .whynow-card--live .whynow-status { color: #E74C3C; }
+  .whynow-card--signal .whynow-status { color: var(--gold); }
+  .whynow-title { font-weight: 700; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.2rem; }
+  .whynow-date {
+    font-size: 0.68rem; color: var(--muted); margin-bottom: 0.6rem;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .whynow-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .whynow-insight {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    background: var(--navy); border-radius: 8px; padding: 1.1rem 1.4rem;
+  }
+  .whynow-insight-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; }
+  .whynow-insight p { font-size: 0.84rem; color: var(--sky); line-height: 1.6; font-style: italic; }
+
+  /* ── FOUNDERS UPDATED ────────────────────────────────────────────── */
+  .founders-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;
+  }
+  .founder-card {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    border: 1.5px solid var(--border); border-radius: 10px; padding: 1.4rem;
+    background: var(--pale);
+  }
+  .founder-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--navy); color: var(--gold);
+    font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .founder-name { font-family: var(--font-serif); font-size: 1.1rem; color: var(--navy); margin-bottom: 0.15rem; }
+  .founder-role { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem; }
+  .founder-bio { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.8rem; }
+  .founder-linkedin {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.75rem; font-weight: 600; color: #0077B5;
+    text-decoration: none; padding: 0.3rem 0.7rem;
+    border: 1.5px solid #0077B5; border-radius: 4px;
+    transition: all .15s;
+  }
+  .founder-linkedin:hover { background: #0077B5; color: var(--white); }
+  .founders-why {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    background: var(--navy); border-radius: 8px; padding: 1.1rem 1.4rem;
+  }
+  .founders-why-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; }
+  .founders-why p { font-size: 0.84rem; color: var(--sky); line-height: 1.6; font-style: italic; }
+
+  @media (max-width: 900px) {
+    .problem-grid   { grid-template-columns: 1fr; }
+    .problem-sq-grid { grid-template-columns: 1fr; }
+    .whynow-grid    { grid-template-columns: 1fr 1fr; }
+    .founders-grid  { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .whynow-grid    { grid-template-columns: 1fr; }
+    .solution-layer { flex-direction: column; gap: 0.5rem; }
+    .solution-path-steps { flex-direction: column; align-items: flex-start; }
+  }
+
   /* ── PRINT ────────────────────────────────────────────────────────── */
   @media print {
     .site-header, #cta, footer, .btn-pdf, .canvas-cell::after { display: none !important; }
@@ -1013,16 +1164,18 @@
 <header class="site-header">
   <div class="logo">Veri<span>Pura</span></div>
   <nav>
-    <a href="#canvas">Canvas</a>
+    <a href="#problem">Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#whynow">Why Now</a>
     <a href="#market">Market</a>
     <a href="#corridors">Corridors</a>
-    <a href="#charts">Financials</a>
-    <a href="#traction">Traction</a>
+    <a href="#canvas">Model</a>
     <a href="#competitive">Competition</a>
+    <a href="#traction">Traction</a>
     <a href="#founders">Team</a>
+    <a href="#charts">Financials</a>
     <a href="#proceeds">Proceeds</a>
     <a href="#invest">Invest</a>
-    <a href="#cta">Contact</a>
   </nav>
 </header>
 
@@ -1041,101 +1194,161 @@
   </div>
 </section>
 
-<!-- ── CANVAS ─────────────────────────────────────────────────────────────── -->
-<section class="section" id="canvas">
+<!-- ── PROBLEM ──────────────────────────────────────────────────────────── -->
+<section class="section" id="problem" style="background: var(--white);">
   <div class="section-inner">
-    <h2 class="section-title">Lean Startup <span>Canvas</span></h2>
-    <p class="section-desc">Click any cell to expand full detail.</p>
+    <h2 class="section-title">The <span>Problem</span></h2>
+    <p class="section-desc">Every year, billions of euros in food shipments are delayed or destroyed at EU and US borders — not because the product is unsafe, but because the paperwork is wrong.</p>
     <hr class="divider">
-    <p class="canvas-hint">Each section opens a detailed overlay with full content from the revised canvas.</p>
+    <div class="problem-grid">
 
-    <div class="canvas-grid">
+      <div class="problem-card problem-card--stat">
+        <div class="problem-stat">€5K–€50K</div>
+        <div class="problem-stat-label">Cost per compliance incident</div>
+        <p class="problem-desc">A single missing or incorrect certificate can halt an entire shipment. Demurrage, storage, re-inspection, destruction — costs fall entirely on the EU or US importer.</p>
+      </div>
 
-      <!-- PROBLEM -->
-      <div class="canvas-cell accent-cell cell-problem" onclick="openModal('problem')">
-        <div class="cell-header"><span class="cell-icon">⚠</span> Problem</div>
-        <div class="cell-headline">Structurally broken cross-border food documentation</div>
-        <p class="cell-preview">Rejections pre-date regulation. Importers in high-compliance markets bear full legal accountability for supplier failures in low-CPI corridors — with no real-time correction capability.</p>
-        <div class="cell-tags">
-          <span class="tag red">Pre-existing</span>
-          <span class="tag">EUDR</span>
-          <span class="tag">FSMA 204</span>
-          <span class="tag">Farm to Fork</span>
-          <span class="tag">Mercosur</span>
+      <div class="problem-card problem-card--stat">
+        <div class="problem-stat">39%</div>
+        <div class="problem-stat-label">of EU import refusals are documentation failures</div>
+        <p class="problem-desc">Based on FDA refusal database analysis of 65,667 human food rejections. The product itself is rarely the issue — the compliance paperwork is.</p>
+      </div>
+
+      <div class="problem-card problem-card--stat">
+        <div class="problem-stat">100%</div>
+        <div class="problem-stat-label">Legal liability sits with the importer</div>
+        <p class="problem-desc">EU and US importers bear full legal accountability — but depend entirely on Global South suppliers to produce the correct paperwork. A structural liability gap with no current fix.</p>
+      </div>
+
+    </div>
+
+    <div class="problem-status-quo">
+      <div class="problem-sq-title">The Status Quo</div>
+      <div class="problem-sq-grid">
+        <div class="problem-sq-item">
+          <div class="problem-sq-icon">✉</div>
+          <div class="problem-sq-text">Email chains between importer and supplier — no audit trail, no version control, no accountability</div>
+        </div>
+        <div class="problem-sq-item">
+          <div class="problem-sq-icon">📄</div>
+          <div class="problem-sq-text">PDFs and spreadsheets passed between parties — easily falsified, impossible to verify at scale</div>
+        </div>
+        <div class="problem-sq-item">
+          <div class="problem-sq-icon">👤</div>
+          <div class="problem-sq-text">Freelance compliance consultants — slow, expensive, unscalable. Every €50K consultant is a future VeriPura client</div>
+        </div>
+        <div class="problem-sq-item">
+          <div class="problem-sq-icon">⚠</div>
+          <div class="problem-sq-text">No AI-native, blockchain-attested platform exists at this intersection — the market is entirely unserved</div>
         </div>
       </div>
-
-      <!-- SOLUTION -->
-      <div class="canvas-cell cell-solution" onclick="openModal('solution')">
-        <div class="cell-header"><span class="cell-icon">⚙</span> Solution</div>
-        <div class="cell-headline">AI Agents · Blockchain Attestation · Freight Partner Channel</div>
-        <p class="cell-preview">Auto-validate, auto-correct, and immutably attest compliance documentation before departure from origin country.</p>
-        <div class="cell-tags"><span class="tag">IOTA</span><span class="tag navy">Web3-native</span></div>
-      </div>
-
-      <!-- UVP -->
-      <div class="canvas-cell cell-uvp" onclick="openModal('uvp')">
-        <div class="cell-header"><span class="cell-icon">◈</span> Unique Value Proposition</div>
-        <div class="cell-headline">"The only platform that prevents food import rejection at the border — automatically, before the shipment leaves."</div>
-        <p class="cell-preview">Core value exists because cross-border documentation is structurally broken. Regulations amplify an urgent problem — they don't create it.</p>
-        <div class="cell-tags"><span class="tag gold">Border-ready</span><span class="tag">Automated</span><span class="tag">Attested</span></div>
-      </div>
-
-      <!-- UNFAIR ADVANTAGE -->
-      <div class="canvas-cell cell-advantage" onclick="openModal('advantage')">
-        <div class="cell-header"><span class="cell-icon">🔒</span> Unfair Advantage</div>
-        <div class="cell-headline">Institutional knowledge + network effects + compounding data flywheel</div>
-        <p class="cell-preview">18+ years food export compliance encoded in the product. Blockchain attestation dataset grows and compounds with every shipment.</p>
-        <div class="cell-tags"><span class="tag navy">Cannot be copied</span><span class="tag">€14M track record</span></div>
-      </div>
-
-      <!-- CUSTOMER SEGMENTS -->
-      <div class="canvas-cell cell-segments" onclick="openModal('segments')">
-        <div class="cell-header"><span class="cell-icon">◎</span> Customer Segments</div>
-        <div class="cell-headline">EU/EEA · UK · US · Switzerland · GCC · Canada</div>
-        <p class="cell-preview">~10,000 EU/EEA SME food importers. ~3,500 US importers. 2,000 dual-compliance accounts (highest ARPA). Brazilian-corridor importers: highest-urgency 2026 segment.</p>
-        <div class="cell-tags">
-          <span class="tag">SME importers</span><span class="tag gold">Dual EU/US</span>
-          <span class="tag red">Brazil corridor</span>
-        </div>
-      </div>
-
-      <!-- ALT / KEY METRICS combined cell -->
-      <div class="canvas-cell cell-altmetrics" onclick="openModal('metrics')">
-        <div class="cell-header"><span class="cell-icon">📊</span> Key Metrics</div>
-        <div class="cell-headline">135× LTV:CAC · 110–118% NRR · €226K ARR/FTE</div>
-        <p class="cell-preview">21 → 2,610 clients Y1→Y5. CAC payback 2.1 months (Y3). Magic Number 16.5× driven by freight partner channel efficiency.</p>
-        <div class="cell-tags"><span class="tag">Y4 EBITDA+</span><span class="tag navy">Series A Y2</span></div>
-      </div>
-
-      <!-- WHY NOW + CHANNELS combined -->
-      <div class="canvas-cell cell-metrics" onclick="openModal('whynow')">
-        <div class="cell-header"><span class="cell-icon">⏱</span> Why Now · Channels</div>
-        <div class="cell-headline">Three converging mandates + EU–Mercosur + pre-existing demand</div>
-        <p class="cell-preview">EUDR Dec 2026. FSMA 204 obligations active now. Farm to Fork phasing 2026–2027. EU–Mercosur provisionally applying Feb 2026; full ratification pending. Founder network + freight partner channel + IOTA co-marketing.</p>
-        <div class="cell-tags"><span class="tag red">Regulatory tailwind</span></div>
-      </div>
-
-      <!-- COST STRUCTURE -->
-      <div class="canvas-cell mid cell-cost" onclick="openModal('cost')">
-        <div class="cell-header"><span class="cell-icon">💶</span> Cost Structure</div>
-        <div class="cell-headline">€750K seed deployed across product, team, GTM</div>
-        <p class="cell-preview">AI Agent Architecture + IOTA: €200K · Cloud + SOC2: €50K · Key hires: €180K · GTM: €125K · Legal/Regulatory: €55K · Ops + contingency: €140K. Monthly burn: €46K (Y1) → €55K (Y2). COGS declining 29%→21% Y1→Y5.</p>
-      </div>
-
-      <!-- REVENUE STREAMS -->
-      <div class="canvas-cell mid cell-revenue" onclick="openModal('revenue')">
-        <div class="cell-header"><span class="cell-icon">📈</span> Revenue Streams</div>
-        <div class="cell-headline">Subscription + Per-Shipment Attestation · 79% Gross Margin at Y5</div>
-        <p class="cell-preview">€199–€899/month subscription (~80% of revenue) + €15–€280/shipment attestation (~20%). VeriPura retains 80→90% of gross revenue as freight partner share ramps down. Y5: €33.2M net revenue · €11.1M EBITDA (33.5%).</p>
-        <div class="cell-tags"><span class="tag gold">VeriLiquid optionality</span><span class="tag">ACV €9.9K→€12.7K</span></div>
-      </div>
-
-    </div><!-- /canvas-grid -->
+    </div>
   </div>
 </section>
 
+<!-- ── SOLUTION ─────────────────────────────────────────────────────────── -->
+<section class="section" id="solution" style="background: var(--navy);">
+  <div class="section-inner">
+    <h2 class="section-title" style="color:var(--white);">The <span style="color:var(--gold);">Solution</span></h2>
+    <p class="section-desc" style="color:var(--sky);">VeriPura is the AI + blockchain compliance platform that prevents food shipments from being rejected at EU and US borders. Three layers that work together.</p>
+    <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%);">
 
+    <div class="solution-layers">
+
+      <div class="solution-layer">
+        <div class="solution-layer-num">01</div>
+        <div class="solution-layer-body">
+          <div class="solution-layer-title">AI Agents</div>
+          <p class="solution-layer-desc">Collect and validate supplier certificates, cross-check EU and US regulatory requirements, and auto-generate corrected documentation — before the shipment leaves the country of origin. Problems are fixed at source, not at the border.</p>
+        </div>
+      </div>
+
+      <div class="solution-layer">
+        <div class="solution-layer-num">02</div>
+        <div class="solution-layer-body">
+          <div class="solution-layer-title">Blockchain Attestation</div>
+          <p class="solution-layer-desc">IOTA blockchain creates an immutable, tamper-proof record of every document and every compliance decision. Customs verifies provenance instantly — no centralised database, no single point of failure, no possibility of retrospective falsification.</p>
+        </div>
+      </div>
+
+      <div class="solution-layer">
+        <div class="solution-layer-num">03</div>
+        <div class="solution-layer-body">
+          <div class="solution-layer-title">Freight Partner Channel</div>
+          <p class="solution-layer-desc">The platform is embedded into freight forwarder workflows. Forwarders already touch every shipment — they have the client relationships and are incentivised to reduce their own liability exposure. VeriPura makes the forwarder look good to their client. The forwarder becomes a distribution arm, not a competitor. CAC advantage: €1,200 partner vs €9,500 direct.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="solution-path">
+      <div class="solution-path-label">Platform Expansion Path</div>
+      <div class="solution-path-steps">
+        <div class="solution-path-step solution-path-step--active">
+          <div class="solution-path-year">Y1 — Now</div>
+          <div class="solution-path-cat">Food</div>
+        </div>
+        <div class="solution-path-arrow">→</div>
+        <div class="solution-path-step">
+          <div class="solution-path-year">Y3</div>
+          <div class="solution-path-cat">Vitamins &amp; Supplements</div>
+        </div>
+        <div class="solution-path-arrow">→</div>
+        <div class="solution-path-step">
+          <div class="solution-path-year">Vision</div>
+          <div class="solution-path-cat">Pharmaceuticals</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── WHY NOW ───────────────────────────────────────────────────────────── -->
+<section class="section" id="whynow" style="background: var(--white);">
+  <div class="section-inner">
+    <h2 class="section-title">Why <span>Now</span></h2>
+    <p class="section-desc">Three regulatory mandates converge in 2026. This is not a trend — it is a permanent step-up in the cost of cross-border food trade.</p>
+    <hr class="divider">
+    <div class="whynow-grid">
+
+      <div class="whynow-card whynow-card--live">
+        <div class="whynow-status">● Live Now</div>
+        <div class="whynow-title">EU Farm to Fork</div>
+        <div class="whynow-date">2026–2027 phased enforcement</div>
+        <p class="whynow-desc">Mandatory origin traceability and digital documentary equivalence for all non-EU food imports. VeriPura is the importer-side attestation layer.</p>
+      </div>
+
+      <div class="whynow-card whynow-card--live">
+        <div class="whynow-status">● Live Now</div>
+        <div class="whynow-title">EUDR</div>
+        <div class="whynow-date">Dec 2026 large operators · Jun 2027 SMEs</div>
+        <p class="whynow-desc">Deforestation due diligence mandatory for cocoa, coffee, soy, palm oil, beef, rubber, timber. Due Diligence Statement required via TRACES before EU/EEA entry. Documentation burden tripling for affected importers.</p>
+      </div>
+
+      <div class="whynow-card whynow-card--live">
+        <div class="whynow-status">● Live Now</div>
+        <div class="whynow-title">US FDA FSMA 204</div>
+        <div class="whynow-date">Enforcement active · Full compliance Jul 2028</div>
+        <p class="whynow-desc">Traceability recordkeeping legally in force. Dual EU/US compliance accounts are VeriPura's highest-ARPA segment — one platform solving both jurisdictions simultaneously.</p>
+      </div>
+
+      <div class="whynow-card whynow-card--signal">
+        <div class="whynow-status">◈ Demand Signal</div>
+        <div class="whynow-title">EU–Mercosur Agreement</div>
+        <div class="whynow-date">Provisionally applying Feb 2026</div>
+        <p class="whynow-desc">Signed 17 Jan 2026. Commission began provisional application 27 Feb 2026 after Argentina and Uruguay ratified. Full ratification by all 27 EU member states pending — ECJ challenge may extend timeline. Trade is flowing under new terms now. Import volumes from Brazil, Argentina and Paraguay ramping immediately.</p>
+      </div>
+
+    </div>
+
+    <div class="whynow-insight">
+      <span class="whynow-insight-icon">◈</span>
+      <p>Regulatory pressure is not a trend — it is a permanent step-up in the cost of doing business. Every food importer sourcing from a low-CPI corridor now faces mandatory documentation obligations they currently cannot meet at scale.</p>
+    </div>
+
+  </div>
+</section>
 
 <!-- ── MARKET ────────────────────────────────────────────────────────────── -->
 <section class="section" id="market" style="background: var(--cream);">
@@ -1247,6 +1460,298 @@
 
     <div style="margin-top: 1.2rem; text-align: center;">
       <a href="https://thomasoberlin.github.io/VP-Trust-what-you-eat/" target="_blank" rel="noopener" style="font-size: 0.85rem; color: var(--gold); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid rgba(212,168,71,0.4); padding: 0.55rem 1.2rem; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='rgba(212,168,71,0.1)'" onmouseout="this.style.background='transparent'">Explore the full corridor analysis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CANVAS ─────────────────────────────────────────────────────────────── -->
+<section class="section" id="canvas">
+  <div class="section-inner">
+    <h2 class="section-title">Business <span>Model</span></h2>
+    <p class="section-desc">Click any cell to expand full detail.</p>
+    <hr class="divider">
+    <p class="canvas-hint">Each section opens a detailed overlay with full content from the revised canvas.</p>
+
+    <div class="canvas-grid">
+
+      <!-- PROBLEM -->
+      <div class="canvas-cell accent-cell cell-problem" onclick="openModal('problem')">
+        <div class="cell-header"><span class="cell-icon">⚠</span> Problem</div>
+        <div class="cell-headline">Structurally broken cross-border food documentation</div>
+        <p class="cell-preview">Rejections pre-date regulation. Importers in high-compliance markets bear full legal accountability for supplier failures in low-CPI corridors — with no real-time correction capability.</p>
+        <div class="cell-tags">
+          <span class="tag red">Pre-existing</span>
+          <span class="tag">EUDR</span>
+          <span class="tag">FSMA 204</span>
+          <span class="tag">Farm to Fork</span>
+          <span class="tag">Mercosur</span>
+        </div>
+      </div>
+
+      <!-- SOLUTION -->
+      <div class="canvas-cell cell-solution" onclick="openModal('solution')">
+        <div class="cell-header"><span class="cell-icon">⚙</span> Solution</div>
+        <div class="cell-headline">AI Agents · Blockchain Attestation · Freight Partner Channel</div>
+        <p class="cell-preview">Auto-validate, auto-correct, and immutably attest compliance documentation before departure from origin country.</p>
+        <div class="cell-tags"><span class="tag">IOTA</span><span class="tag navy">Web3-native</span></div>
+      </div>
+
+      <!-- UVP -->
+      <div class="canvas-cell cell-uvp" onclick="openModal('uvp')">
+        <div class="cell-header"><span class="cell-icon">◈</span> Unique Value Proposition</div>
+        <div class="cell-headline">"The only platform that prevents food import rejection at the border — automatically, before the shipment leaves."</div>
+        <p class="cell-preview">Core value exists because cross-border documentation is structurally broken. Regulations amplify an urgent problem — they don't create it.</p>
+        <div class="cell-tags"><span class="tag gold">Border-ready</span><span class="tag">Automated</span><span class="tag">Attested</span></div>
+      </div>
+
+      <!-- UNFAIR ADVANTAGE -->
+      <div class="canvas-cell cell-advantage" onclick="openModal('advantage')">
+        <div class="cell-header"><span class="cell-icon">🔒</span> Unfair Advantage</div>
+        <div class="cell-headline">Institutional knowledge + network effects + compounding data flywheel</div>
+        <p class="cell-preview">18+ years food export compliance encoded in the product. Blockchain attestation dataset grows and compounds with every shipment.</p>
+        <div class="cell-tags"><span class="tag navy">Cannot be copied</span><span class="tag">€14M track record</span></div>
+      </div>
+
+      <!-- CUSTOMER SEGMENTS -->
+      <div class="canvas-cell cell-segments" onclick="openModal('segments')">
+        <div class="cell-header"><span class="cell-icon">◎</span> Customer Segments</div>
+        <div class="cell-headline">EU/EEA · UK · US · Switzerland · GCC · Canada</div>
+        <p class="cell-preview">~10,000 EU/EEA SME food importers. ~3,500 US importers. 2,000 dual-compliance accounts (highest ARPA). Brazilian-corridor importers: highest-urgency 2026 segment.</p>
+        <div class="cell-tags">
+          <span class="tag">SME importers</span><span class="tag gold">Dual EU/US</span>
+          <span class="tag red">Brazil corridor</span>
+        </div>
+      </div>
+
+      <!-- ALT / KEY METRICS combined cell -->
+      <div class="canvas-cell cell-altmetrics" onclick="openModal('metrics')">
+        <div class="cell-header"><span class="cell-icon">📊</span> Key Metrics</div>
+        <div class="cell-headline">135× LTV:CAC · 110–118% NRR · €226K ARR/FTE</div>
+        <p class="cell-preview">21 → 2,610 clients Y1→Y5. CAC payback 2.1 months (Y3). Magic Number 16.5× driven by freight partner channel efficiency.</p>
+        <div class="cell-tags"><span class="tag">Y4 EBITDA+</span><span class="tag navy">Series A Y2</span></div>
+      </div>
+
+      <!-- WHY NOW + CHANNELS combined -->
+      <div class="canvas-cell cell-metrics" onclick="openModal('whynow')">
+        <div class="cell-header"><span class="cell-icon">⏱</span> Why Now · Channels</div>
+        <div class="cell-headline">Three converging mandates + EU–Mercosur + pre-existing demand</div>
+        <p class="cell-preview">EUDR Dec 2026. FSMA 204 obligations active now. Farm to Fork phasing 2026–2027. EU–Mercosur provisionally applying Feb 2026; full ratification pending. Founder network + freight partner channel + IOTA co-marketing.</p>
+        <div class="cell-tags"><span class="tag red">Regulatory tailwind</span></div>
+      </div>
+
+      <!-- COST STRUCTURE -->
+      <div class="canvas-cell mid cell-cost" onclick="openModal('cost')">
+        <div class="cell-header"><span class="cell-icon">💶</span> Cost Structure</div>
+        <div class="cell-headline">€750K seed deployed across product, team, GTM</div>
+        <p class="cell-preview">AI Agent Architecture + IOTA: €200K · Cloud + SOC2: €50K · Key hires: €180K · GTM: €125K · Legal/Regulatory: €55K · Ops + contingency: €140K. Monthly burn: €46K (Y1) → €55K (Y2). COGS declining 29%→21% Y1→Y5.</p>
+      </div>
+
+      <!-- REVENUE STREAMS -->
+      <div class="canvas-cell mid cell-revenue" onclick="openModal('revenue')">
+        <div class="cell-header"><span class="cell-icon">📈</span> Revenue Streams</div>
+        <div class="cell-headline">Subscription + Per-Shipment Attestation · 79% Gross Margin at Y5</div>
+        <p class="cell-preview">€199–€899/month subscription (~80% of revenue) + €15–€280/shipment attestation (~20%). VeriPura retains 80→90% of gross revenue as freight partner share ramps down. Y5: €33.2M net revenue · €11.1M EBITDA (33.5%).</p>
+        <div class="cell-tags"><span class="tag gold">VeriLiquid optionality</span><span class="tag">ACV €9.9K→€12.7K</span></div>
+      </div>
+
+    </div><!-- /canvas-grid -->
+  </div>
+</section>
+
+
+
+<!-- ── COMPETITIVE ───────────────────────────────────────────────────────── -->
+<section class="section" id="competitive" style="background: var(--white);">
+  <div class="section-inner">
+    <h2 class="section-title">Competitive <span>Position</span></h2>
+    <p class="section-desc">No existing solution combines AI compliance automation, blockchain attestation and freight partner distribution for Global South → EU/US food trade.</p>
+    <hr class="divider">
+
+    <div class="comp-grid">
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">Manual / Consultants</div>
+        <div class="comp-tag comp-tag--red">Status Quo</div>
+        <p class="comp-desc">Email chains, PDFs, freelance compliance consultants. Slow, expensive, unscalable. Every €50K compliance consultant is a future VeriPura client.</p>
+        <div class="comp-verdict">❌ No automation · ❌ No attestation · ❌ No scale</div>
+      </div>
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">ERP Modules (SAP / Oracle)</div>
+        <div class="comp-tag comp-tag--amber">Wrong Tool</div>
+        <p class="comp-desc">Built for manufacturers, not importers. 18-month deployments. Cannot handle Global South documentary variance or blockchain attestation.</p>
+        <div class="comp-verdict">❌ Wrong buyer · ❌ 18-month deploy · ❌ No AI</div>
+      </div>
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">Point Solutions</div>
+        <div class="comp-tag comp-tag--amber">Partial</div>
+        <p class="comp-desc">Document management tools, traceability trackers. Address one compliance step. No end-to-end AI-native platform exists at this intersection.</p>
+        <div class="comp-verdict">❌ Single-step · ❌ No attestation · ❌ No channel</div>
+      </div>
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">Web3 Infrastructure (OriginTrail, IBM Food Trust)</div>
+        <div class="comp-tag comp-tag--amber">Adjacent</div>
+        <p class="comp-desc">Infrastructure and provenance plays — not compliance automation. Require significant integration effort. Not designed for importer-side documentary compliance.</p>
+        <div class="comp-verdict">❌ Infrastructure · ❌ Not importer-side · ❌ No AI agents</div>
+      </div>
+    </div>
+
+    <div class="comp-veripura">
+      <div class="comp-vp-header">
+        <span class="comp-vp-logo">Veri<span>Pura</span></span>
+        <span class="comp-vp-tag">Only End-to-End Solution</span>
+      </div>
+      <div class="comp-vp-moats">
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">AI Agent Compliance</div>
+            <div class="comp-moat-desc">Auto-validate, auto-correct documentation before departure from origin country</div>
+          </div>
+        </div>
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">Blockchain Attestation</div>
+            <div class="comp-moat-desc">IOTA immutable record — customs verifies instantly; proprietary data flywheel compounds with every shipment</div>
+          </div>
+        </div>
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">Freight Partner Channel</div>
+            <div class="comp-moat-desc">6× CAC advantage — €1,200 partner vs €9,500 direct; structural distribution moat self-reinforces</div>
+          </div>
+        </div>
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">Domain Expertise Moat</div>
+            <div class="comp-moat-desc">18 years of food export compliance encoded in the product — knowing which cert Thai mango needs to enter Amsterdam takes years to replicate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <div class="comp-exits-title">Comparable Exits at VeriPura's Y5 Profile (€33.2M ARR · 79% GM · 33% EBITDA)</div>
+      <div class="comp-exits-grid">
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">Veeva Systems</div>
+          <div class="comp-exit-sector">Life sciences compliance</div>
+          <div class="comp-exit-multiple">10–14× ARR</div>
+        </div>
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">project44</div>
+          <div class="comp-exit-sector">AI supply chain visibility</div>
+          <div class="comp-exit-multiple">12–18× ARR</div>
+        </div>
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">TraceLink</div>
+          <div class="comp-exit-sector">Pharma supply chain compliance</div>
+          <div class="comp-exit-multiple">7–10× ARR</div>
+        </div>
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">Descartes Systems</div>
+          <div class="comp-exit-sector">Logistics compliance</div>
+          <div class="comp-exit-multiple">8–12× ARR</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TRACTION ───────────────────────────────────────────────────────────── -->
+<section class="section" id="traction" style="background: var(--navy);">
+  <div class="section-inner">
+    <h2 class="section-title" style="color: var(--white);">Traction <span style="color: var(--gold);">&amp; Status</span></h2>
+    <p class="section-desc" style="color: var(--sky);">Pre-revenue. Pre-contract. The platform is built, the pipeline is real, and the regulatory mandate is live.</p>
+    <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%);">
+
+    <div class="traction-grid">
+
+      <div class="traction-card traction-card--done">
+        <div class="traction-status">✓ Complete</div>
+        <div class="traction-title">Working Prototype</div>
+        <p class="traction-desc">Live compliance agent demo operational. Screen recording available for async investor review. Core 9-stage workflow — Intake through Ledger — fully demonstrated.</p>
+      </div>
+
+      <div class="traction-card traction-card--done">
+        <div class="traction-status">✓ Complete</div>
+        <div class="traction-title">Financial Model</div>
+        <p class="traction-desc">Institutional-grade 5-year model (v5) — fully auditable with primary source data. Available in the data room on request.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">IOTA Foundation Engagement</div>
+        <p class="traction-desc">Blockchain attestation layer integration underway with IOTA Foundation. Technical alignment confirmed on document notarisation and verifiable credentials approach.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">IOTA TWIN Pilot Corridor</div>
+        <p class="traction-desc">Brazil–Great Britain beef corridor in early-stage discussion as a pilot use case with IOTA TWIN infrastructure. UK-specific documentary compliance — outside EU jurisdiction, EUDR does not apply.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">Freight Partner Pipeline</div>
+        <p class="traction-desc">Conversations underway with EU-based freight forwarders. Anchor partner LOI targeted Q2 2026. Partner channel is the primary go-to-market lever.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">Importer Pilot Candidates</div>
+        <p class="traction-desc">First EU food importer pilot candidates identified through founder network. Outreach underway targeting Dutch and Swiss SME importers sourcing from high-risk corridors.</p>
+      </div>
+
+    </div>
+
+    <div class="traction-honest">
+      <div class="traction-honest-inner">
+        <span class="traction-honest-icon">◈</span>
+        <p>This is a raise to sign the first anchor freight partner and close the first 28 clients. Seed proceeds fund the 18-month sprint to Series A readiness at €1.24M ARR.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOUNDERS ─────────────────────────────────────────────────────────────── -->
+<section class="section" id="founders" style="background: var(--white);">
+  <div class="section-inner">
+    <h2 class="section-title">The <span>Team</span></h2>
+    <p class="section-desc">Domain expertise and execution track record — the two things that matter most at pre-seed.</p>
+    <hr class="divider">
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-avatar">OS</div>
+        <div class="founder-info">
+          <div class="founder-name">Onno Stienen</div>
+          <div class="founder-role">Co-Founder &amp; CEO</div>
+          <p class="founder-bio">18+ years operating in food export and import compliance across Southeast Asia and the EU, including direct experience with South East Asian supply chains (Bangkok-based organic food production). EU food import compliance expert with an active network across the Netherlands, Switzerland and Germany. The regulatory knowledge encoded in VeriPura's compliance engine is his institutional expertise.</p>
+          <a href="https://www.linkedin.com/in/onnostienen/" target="_blank" rel="noopener" class="founder-linkedin">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-avatar">TO</div>
+        <div class="founder-info">
+          <div class="founder-name">Thomas Oberlin</div>
+          <div class="founder-role">Co-Founder &amp; COO</div>
+          <p class="founder-bio">Serial entrepreneur and patent holder with €14M raised across prior ventures. Founder of the first Controlled Environment Agriculture company in South America, and worked in food processing — a firsthand understanding of the supply chain problems VeriPura solves. Italy-based with extensive go-to-market background in innovative B2B environments. Leads fundraising, partnerships and go-to-market.</p>
+          <a href="https://www.linkedin.com/in/thomassoberlin/" target="_blank" rel="noopener" class="founder-linkedin">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="founders-why">
+      <span class="founders-why-icon">◈</span>
+      <p>Onno has spent 18 years on the exact problem VeriPura solves — he is the target customer. Thomas has raised capital and scaled food ventures across two continents. Together: domain expertise and execution track record to move from prototype to market leader.</p>
     </div>
   </div>
 </section>
@@ -1434,190 +1939,6 @@
       <p class="calc-disclaimer">Illustrative only. Based on VeriPura_Financial_Model_v5.xlsx. Assumes full €750K raise, ~16.7% pre-seed ownership diluting to ~7.5% at exit after Series A and B. Returns not guaranteed.</p>
     </div>
 
-  </div>
-</section>
-
-
-
-<!-- ── TRACTION ───────────────────────────────────────────────────────────── -->
-<section class="section" id="traction" style="background: var(--navy);">
-  <div class="section-inner">
-    <h2 class="section-title" style="color: var(--white);">Traction <span style="color: var(--gold);">&amp; Status</span></h2>
-    <p class="section-desc" style="color: var(--sky);">Pre-revenue. Pre-contract. The platform is built, the pipeline is real, and the regulatory mandate is live.</p>
-    <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%);">
-
-    <div class="traction-grid">
-
-      <div class="traction-card traction-card--done">
-        <div class="traction-status">✓ Complete</div>
-        <div class="traction-title">Working Prototype</div>
-        <p class="traction-desc">Live compliance agent demo operational. Screen recording available for async investor review. Core 9-stage workflow — Intake through Ledger — fully demonstrated.</p>
-      </div>
-
-      <div class="traction-card traction-card--done">
-        <div class="traction-status">✓ Complete</div>
-        <div class="traction-title">Financial Model</div>
-        <p class="traction-desc">Institutional-grade 5-year model (v5) — fully auditable with primary source data. Available in the data room on request.</p>
-      </div>
-
-      <div class="traction-card traction-card--active">
-        <div class="traction-status">→ Active</div>
-        <div class="traction-title">IOTA Foundation Engagement</div>
-        <p class="traction-desc">Blockchain attestation layer integration underway with IOTA Foundation. Technical alignment confirmed on document notarisation and verifiable credentials approach.</p>
-      </div>
-
-      <div class="traction-card traction-card--active">
-        <div class="traction-status">→ Active</div>
-        <div class="traction-title">IOTA TWIN Pilot Corridor</div>
-        <p class="traction-desc">Brazil–Great Britain beef corridor in early-stage discussion as a pilot use case with IOTA TWIN infrastructure. UK-specific documentary compliance — outside EU jurisdiction, EUDR does not apply.</p>
-      </div>
-
-      <div class="traction-card traction-card--active">
-        <div class="traction-status">→ Active</div>
-        <div class="traction-title">Freight Partner Pipeline</div>
-        <p class="traction-desc">Conversations underway with EU-based freight forwarders. Anchor partner LOI targeted Q2 2026. Partner channel is the primary go-to-market lever.</p>
-      </div>
-
-      <div class="traction-card traction-card--active">
-        <div class="traction-status">→ Active</div>
-        <div class="traction-title">Importer Pilot Candidates</div>
-        <p class="traction-desc">First EU food importer pilot candidates identified through founder network. Outreach underway targeting Dutch and Swiss SME importers sourcing from high-risk corridors.</p>
-      </div>
-
-    </div>
-
-    <div class="traction-honest">
-      <div class="traction-honest-inner">
-        <span class="traction-honest-icon">◈</span>
-        <p>This is a raise to sign the first anchor freight partner and close the first 28 clients. Seed proceeds fund the 18-month sprint to Series A readiness at €1.24M ARR.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── COMPETITIVE ───────────────────────────────────────────────────────── -->
-<section class="section" id="competitive" style="background: var(--white);">
-  <div class="section-inner">
-    <h2 class="section-title">Competitive <span>Position</span></h2>
-    <p class="section-desc">No existing solution combines AI compliance automation, blockchain attestation and freight partner distribution for Global South → EU/US food trade.</p>
-    <hr class="divider">
-
-    <div class="comp-grid">
-      <div class="comp-card comp-card--weak">
-        <div class="comp-name">Manual / Consultants</div>
-        <div class="comp-tag comp-tag--red">Status Quo</div>
-        <p class="comp-desc">Email chains, PDFs, freelance compliance consultants. Slow, expensive, unscalable. Every €50K compliance consultant is a future VeriPura client.</p>
-        <div class="comp-verdict">❌ No automation · ❌ No attestation · ❌ No scale</div>
-      </div>
-      <div class="comp-card comp-card--weak">
-        <div class="comp-name">ERP Modules (SAP / Oracle)</div>
-        <div class="comp-tag comp-tag--amber">Wrong Tool</div>
-        <p class="comp-desc">Built for manufacturers, not importers. 18-month deployments. Cannot handle Global South documentary variance or blockchain attestation.</p>
-        <div class="comp-verdict">❌ Wrong buyer · ❌ 18-month deploy · ❌ No AI</div>
-      </div>
-      <div class="comp-card comp-card--weak">
-        <div class="comp-name">Point Solutions</div>
-        <div class="comp-tag comp-tag--amber">Partial</div>
-        <p class="comp-desc">Document management tools, traceability trackers. Address one compliance step. No end-to-end AI-native platform exists at this intersection.</p>
-        <div class="comp-verdict">❌ Single-step · ❌ No attestation · ❌ No channel</div>
-      </div>
-      <div class="comp-card comp-card--weak">
-        <div class="comp-name">Web3 Infrastructure (OriginTrail, IBM Food Trust)</div>
-        <div class="comp-tag comp-tag--amber">Adjacent</div>
-        <p class="comp-desc">Infrastructure and provenance plays — not compliance automation. Require significant integration effort. Not designed for importer-side documentary compliance.</p>
-        <div class="comp-verdict">❌ Infrastructure · ❌ Not importer-side · ❌ No AI agents</div>
-      </div>
-    </div>
-
-    <div class="comp-veripura">
-      <div class="comp-vp-header">
-        <span class="comp-vp-logo">Veri<span>Pura</span></span>
-        <span class="comp-vp-tag">Only End-to-End Solution</span>
-      </div>
-      <div class="comp-vp-moats">
-        <div class="comp-moat">
-          <div class="comp-moat-icon">✓</div>
-          <div>
-            <div class="comp-moat-title">AI Agent Compliance</div>
-            <div class="comp-moat-desc">Auto-validate, auto-correct documentation before departure from origin country</div>
-          </div>
-        </div>
-        <div class="comp-moat">
-          <div class="comp-moat-icon">✓</div>
-          <div>
-            <div class="comp-moat-title">Blockchain Attestation</div>
-            <div class="comp-moat-desc">IOTA immutable record — customs verifies instantly; proprietary data flywheel compounds with every shipment</div>
-          </div>
-        </div>
-        <div class="comp-moat">
-          <div class="comp-moat-icon">✓</div>
-          <div>
-            <div class="comp-moat-title">Freight Partner Channel</div>
-            <div class="comp-moat-desc">6× CAC advantage — €1,200 partner vs €9,500 direct; structural distribution moat self-reinforces</div>
-          </div>
-        </div>
-        <div class="comp-moat">
-          <div class="comp-moat-icon">✓</div>
-          <div>
-            <div class="comp-moat-title">Domain Expertise Moat</div>
-            <div class="comp-moat-desc">18 years of food export compliance encoded in the product — knowing which cert Thai mango needs to enter Amsterdam takes years to replicate</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 2rem;">
-      <div class="comp-exits-title">Comparable Exits at VeriPura's Y5 Profile (€33.2M ARR · 79% GM · 33% EBITDA)</div>
-      <div class="comp-exits-grid">
-        <div class="comp-exit-card">
-          <div class="comp-exit-name">Veeva Systems</div>
-          <div class="comp-exit-sector">Life sciences compliance</div>
-          <div class="comp-exit-multiple">10–14× ARR</div>
-        </div>
-        <div class="comp-exit-card">
-          <div class="comp-exit-name">project44</div>
-          <div class="comp-exit-sector">AI supply chain visibility</div>
-          <div class="comp-exit-multiple">12–18× ARR</div>
-        </div>
-        <div class="comp-exit-card">
-          <div class="comp-exit-name">TraceLink</div>
-          <div class="comp-exit-sector">Pharma supply chain compliance</div>
-          <div class="comp-exit-multiple">7–10× ARR</div>
-        </div>
-        <div class="comp-exit-card">
-          <div class="comp-exit-name">Descartes Systems</div>
-          <div class="comp-exit-sector">Logistics compliance</div>
-          <div class="comp-exit-multiple">8–12× ARR</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── FOUNDERS ─────────────────────────────────────────────────────────────── -->
-<section class="section" id="founders">
-  <div class="section-inner">
-    <h2 class="section-title">Founding <span>Team</span></h2>
-    <p class="section-desc">Domain expertise meets serial entrepreneurship.</p>
-    <hr class="divider">
-    <div class="founders-grid">
-      <div class="founder-card">
-        <div class="founder-initial">OS</div>
-        <div class="founder-name">Onno Stienen</div>
-        <div class="founder-role">Co-Founder &amp; CEO</div>
-        <p class="founder-bio">18+ years operating in food export and import compliance across Southeast Asia and the EU, including direct experience with South East Asian supply chains (Bangkok-based organic food production). EU food import compliance expert with an active network across the Netherlands, Switzerland and Germany. The regulatory knowledge encoded in VeriPura's compliance engine is his institutional expertise.</p>
-        <a class="founder-email" href="/cdn-cgi/l/email-protection#5639383839162033243f262324377835393b"><span class="__cf_email__" data-cfemail="d9b6b7b7b699afbcabb0a9acabb8f7bab6b4">[email&#160;protected]</span></a>
-      </div>
-      <div class="founder-card">
-        <div class="founder-initial">TO</div>
-        <div class="founder-name">Thomas Oberlin</div>
-        <div class="founder-role">Co-Founder &amp; COO</div>
-        <p class="founder-bio">Serial entrepreneur and patent holder with €14M raised across prior ventures. Founder of the first Controlled Environment Agriculture company in South America, and worked in food processing — a firsthand understanding of the supply chain problems VeriPura solves. Italy-based with extensive go-to-market background in innovative B2B environments. Leads fundraising, partnerships and go-to-market.</p>
-        <a class="founder-email" href="/cdn-cgi/l/email-protection#394d515654584a794f5c4b50494c4b58175a5654"><span class="__cf_email__" data-cfemail="47332f282a2634073122352e373235266924282a">[email&#160;protected]</span></a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -2215,5 +2536,6 @@ function setCalc(val) {
 calcReturns();
 
 </script>
+
 </body>
 </html>
