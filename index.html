@@ -485,6 +485,210 @@
     .safe-moic-item { padding: 0 1rem; }
     .safe-value { font-size: 1.3rem; }
   }
+
+  /* ── MARKET SIZING ───────────────────────────────────────────────── */
+  .market-tam-row {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1.2rem; margin-bottom: 2rem;
+  }
+  .market-tam-card {
+    border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 1.4rem; background: var(--white);
+  }
+  .market-tam-card--large {
+    background: var(--navy); border-color: var(--navy);
+  }
+  .market-tam-card--large .market-tam-label { color: var(--sky); }
+  .market-tam-card--large .market-tam-value { color: var(--gold); }
+  .market-tam-card--large .market-tam-sub   { color: var(--sky); }
+  .market-tam-card--large .market-tam-desc  { color: rgba(214,228,240,0.7); }
+  .market-tam-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 0.3rem;
+  }
+  .market-tam-value {
+    font-family: var(--font-serif); font-size: 2rem;
+    color: var(--navy); line-height: 1; margin-bottom: 0.2rem;
+  }
+  .market-tam-sub {
+    font-size: 0.72rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.6rem; line-height: 1.3;
+  }
+  .market-tam-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  .market-regs { margin-top: 1rem; }
+  .market-reg-title {
+    font-family: var(--font-serif); font-size: 1.1rem;
+    color: var(--navy); margin-bottom: 1rem;
+  }
+  .market-regs-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  }
+  .market-reg-card {
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 1.1rem; background: var(--pale);
+    border-top: 3px solid var(--blue);
+  }
+  .market-reg-name {
+    font-weight: 600; font-size: 0.85rem; color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .market-reg-date {
+    font-size: 0.68rem; font-weight: 600; color: var(--red);
+    letter-spacing: 0.04em; margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+  .market-reg-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── COMPETITIVE ──────────────────────────────────────────────────── */
+  .comp-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .comp-card {
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 1.1rem; background: var(--pale);
+  }
+  .comp-name {
+    font-weight: 600; font-size: 0.84rem; color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .comp-tag {
+    display: inline-block; font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.15rem 0.5rem; border-radius: 3px; margin-bottom: 0.6rem;
+  }
+  .comp-tag--red   { background: rgba(200,80,74,.1); color: var(--red); }
+  .comp-tag--amber { background: rgba(212,168,71,.12); color: #b8860b; }
+  .comp-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-bottom: 0.7rem; }
+  .comp-verdict { font-size: 0.7rem; color: var(--muted); line-height: 1.6; }
+
+  .comp-veripura {
+    background: var(--navy); border-radius: 10px; padding: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .comp-vp-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;
+  }
+  .comp-vp-logo {
+    font-family: var(--font-serif); font-size: 1.4rem; color: var(--white);
+  }
+  .comp-vp-logo span { color: var(--gold); }
+  .comp-vp-tag {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; background: rgba(212,168,71,.2);
+    color: var(--gold); padding: 0.25rem 0.7rem; border-radius: 3px;
+    border: 1px solid rgba(212,168,71,.4);
+  }
+  .comp-vp-moats {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+  }
+  .comp-moat {
+    display: flex; gap: 0.8rem; align-items: flex-start;
+  }
+  .comp-moat-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(212,168,71,.2); border: 1px solid rgba(212,168,71,.4);
+    color: var(--gold); font-size: 0.8rem; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .comp-moat-title {
+    font-size: 0.82rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem;
+  }
+  .comp-moat-desc { font-size: 0.75rem; color: var(--sky); line-height: 1.5; }
+
+  .comp-exits-title {
+    font-family: var(--font-serif); font-size: 1rem; color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .comp-exits-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  }
+  .comp-exit-card {
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 1rem; background: var(--pale); text-align: center;
+  }
+  .comp-exit-name {
+    font-weight: 600; font-size: 0.84rem; color: var(--navy); margin-bottom: 0.2rem;
+  }
+  .comp-exit-sector {
+    font-size: 0.7rem; color: var(--muted); margin-bottom: 0.5rem;
+  }
+  .comp-exit-multiple {
+    font-family: var(--font-mono); font-size: 1rem;
+    color: var(--blue); font-weight: 600;
+  }
+
+  /* ── USE OF PROCEEDS ──────────────────────────────────────────────── */
+  .proceeds-layout {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem;
+  }
+  .proceeds-bars { display: flex; flex-direction: column; gap: 0; }
+  .proceeds-bar-row {
+    display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.2rem;
+    margin-top: 1rem;
+  }
+  .proceeds-bar-label {
+    font-size: 0.78rem; font-weight: 600; color: var(--navy);
+    min-width: 140px;
+  }
+  .proceeds-bar-track {
+    flex: 1; height: 10px; background: var(--border);
+    border-radius: 5px; overflow: hidden;
+  }
+  .proceeds-bar-fill { height: 100%; border-radius: 5px; }
+  .proceeds-bar-amount {
+    font-family: var(--font-mono); font-size: 0.8rem;
+    color: var(--navy); min-width: 80px; text-align: right;
+  }
+  .proceeds-pct { color: var(--muted); font-size: 0.72rem; }
+  .proceeds-bar-note {
+    font-size: 0.72rem; color: var(--muted); padding-left: 148px;
+    margin-bottom: 0.6rem; line-height: 1.4;
+  }
+
+  .milestones { display: flex; flex-direction: column; gap: 0; }
+  .milestones-title {
+    font-family: var(--font-serif); font-size: 1rem;
+    color: var(--navy); margin-bottom: 1.2rem;
+  }
+  .milestone-item {
+    display: flex; gap: 0.9rem; align-items: flex-start;
+    padding-bottom: 1.2rem; position: relative;
+  }
+  .milestone-item:not(:last-child)::before {
+    content: ''; position: absolute; left: 7px; top: 20px;
+    width: 1px; bottom: 0; background: var(--border);
+  }
+  .milestone-dot {
+    width: 15px; height: 15px; border-radius: 50%; flex-shrink: 0;
+    background: var(--border); border: 2px solid var(--muted); margin-top: 2px;
+  }
+  .milestone-dot--gold { background: var(--gold); border-color: var(--gold); }
+  .milestone-dot--blue { background: var(--blue); border-color: var(--blue); }
+  .milestone-year {
+    font-size: 0.72rem; font-weight: 600; color: var(--blue);
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.2rem;
+  }
+  .milestone-text { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── RESPONSIVE additions ─────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .market-tam-row   { grid-template-columns: 1fr; }
+    .market-regs-grid { grid-template-columns: 1fr 1fr; }
+    .comp-grid        { grid-template-columns: 1fr 1fr; }
+    .comp-vp-moats    { grid-template-columns: 1fr; }
+    .comp-exits-grid  { grid-template-columns: 1fr 1fr; }
+    .proceeds-layout  { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .market-regs-grid { grid-template-columns: 1fr; }
+    .comp-grid        { grid-template-columns: 1fr; }
+    .comp-exits-grid  { grid-template-columns: 1fr 1fr; }
+    .proceeds-bar-label { min-width: 100px; font-size: 0.72rem; }
+    .proceeds-bar-note  { padding-left: 0; }
+  }
+
   /* ── PRINT ────────────────────────────────────────────────────────── */
   @media print {
     .site-header, #cta, footer, .btn-pdf, .canvas-cell::after { display: none !important; }
@@ -540,9 +744,12 @@
   <div class="logo">Veri<span>Pura</span></div>
   <nav>
     <a href="#canvas">Canvas</a>
+    <a href="#market">Market</a>
     <a href="#corridors">Corridors</a>
     <a href="#charts">Financials</a>
+    <a href="#competitive">Competition</a>
     <a href="#founders">Team</a>
+    <a href="#proceeds">Proceeds</a>
     <a href="#invest">Invest</a>
     <a href="#cta">Contact</a>
   </nav>
@@ -658,6 +865,64 @@
 </section>
 
 
+
+<!-- ── MARKET ────────────────────────────────────────────────────────────── -->
+<section class="section" id="market" style="background: var(--cream);">
+  <div class="section-inner">
+    <h2 class="section-title">Market <span>Opportunity</span></h2>
+    <p class="section-desc">A permanent regulatory step-up in the cost of cross-border food trade — not a trend.</p>
+    <hr class="divider">
+
+    <div class="market-tam-row">
+      <div class="market-tam-card market-tam-card--large">
+        <div class="market-tam-label">TAM</div>
+        <div class="market-tam-value">€420B+</div>
+        <div class="market-tam-sub">Total Addressable Market</div>
+        <div class="market-tam-desc">EU food &amp; beverage imports (€170B+) + US food imports ($250B+) + EU vitamins &amp; supplements (€40B+) — all regulated, all documentation-dependent</div>
+      </div>
+      <div class="market-tam-card">
+        <div class="market-tam-label">SAM</div>
+        <div class="market-tam-value">~15,500</div>
+        <div class="market-tam-sub">Importers Needing Compliance Automation</div>
+        <div class="market-tam-desc">~10,000 EU/EEA SME food importers (EUDR + Farm to Fork) · ~3,500 US importers (FSMA 204) · ~2,000 dual EU/US accounts at highest ARPA</div>
+      </div>
+      <div class="market-tam-card">
+        <div class="market-tam-label">SOM</div>
+        <div class="market-tam-value">2,610</div>
+        <div class="market-tam-sub">5-Year Target Clients</div>
+        <div class="market-tam-desc">€33.2M net revenue at Y5 · ACV growing €9.9K→€12.7K · Freight partner flywheel compounds growth at near-zero incremental CAC</div>
+      </div>
+    </div>
+
+    <div class="market-regs">
+      <div class="market-reg-title">Three Converging Mandates — 2026</div>
+      <div class="market-regs-grid">
+        <div class="market-reg-card">
+          <div class="market-reg-name">EU Farm to Fork</div>
+          <div class="market-reg-date">2026–2027</div>
+          <p class="market-reg-desc">Mandatory origin traceability and digital documentary equivalence for all non-EU food imports. VeriPura is the importer-side attestation layer.</p>
+        </div>
+        <div class="market-reg-card">
+          <div class="market-reg-name">EUDR</div>
+          <div class="market-reg-date">Dec 2026 · Jun 2027 SMEs</div>
+          <p class="market-reg-desc">Deforestation due diligence mandatory for cocoa, coffee, soy, palm oil, beef, rubber, timber. DDS required via TRACES before EU/EEA entry.</p>
+        </div>
+        <div class="market-reg-card">
+          <div class="market-reg-name">US FDA FSMA 204</div>
+          <div class="market-reg-date">Enforcement Jul 2028</div>
+          <p class="market-reg-desc">Traceability recordkeeping legally in force. Preparation obligations active now. Dual EU/US compliance accounts are VeriPura's highest-ARPA segment.</p>
+        </div>
+        <div class="market-reg-card">
+          <div class="market-reg-name">EU–Mercosur Agreement</div>
+          <div class="market-reg-date">Signed Jan 2026</div>
+          <p class="market-reg-desc">Dramatically increases regulated import volumes from Brazil, Argentina, Paraguay — all subject to EUDR attestation. Immediate demand signal.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ── CORRIDORS ──────────────────────────────────────────────────────────── -->
 <section class="section" id="corridors" style="background: var(--navy);">
   <div class="section-inner">
@@ -756,6 +1021,107 @@
   </div>
 </section>
 
+
+<!-- ── COMPETITIVE ───────────────────────────────────────────────────────── -->
+<section class="section" id="competitive" style="background: var(--white);">
+  <div class="section-inner">
+    <h2 class="section-title">Competitive <span>Position</span></h2>
+    <p class="section-desc">No existing solution combines AI compliance automation, blockchain attestation and freight partner distribution for Global South → EU/US food trade.</p>
+    <hr class="divider">
+
+    <div class="comp-grid">
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">Manual / Consultants</div>
+        <div class="comp-tag comp-tag--red">Status Quo</div>
+        <p class="comp-desc">Email chains, PDFs, freelance compliance consultants. Slow, expensive, unscalable. Every €50K compliance consultant is a future VeriPura client.</p>
+        <div class="comp-verdict">❌ No automation · ❌ No attestation · ❌ No scale</div>
+      </div>
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">ERP Modules (SAP / Oracle)</div>
+        <div class="comp-tag comp-tag--amber">Wrong Tool</div>
+        <p class="comp-desc">Built for manufacturers, not importers. 18-month deployments. Cannot handle Global South documentary variance or blockchain attestation.</p>
+        <div class="comp-verdict">❌ Wrong buyer · ❌ 18-month deploy · ❌ No AI</div>
+      </div>
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">Point Solutions</div>
+        <div class="comp-tag comp-tag--amber">Partial</div>
+        <p class="comp-desc">Document management tools, traceability trackers. Address one compliance step. No end-to-end AI-native platform exists at this intersection.</p>
+        <div class="comp-verdict">❌ Single-step · ❌ No attestation · ❌ No channel</div>
+      </div>
+      <div class="comp-card comp-card--weak">
+        <div class="comp-name">Web3 Infrastructure (OriginTrail, IBM Food Trust)</div>
+        <div class="comp-tag comp-tag--amber">Adjacent</div>
+        <p class="comp-desc">Infrastructure and provenance plays — not compliance automation. Require significant integration effort. Not designed for importer-side documentary compliance.</p>
+        <div class="comp-verdict">❌ Infrastructure · ❌ Not importer-side · ❌ No AI agents</div>
+      </div>
+    </div>
+
+    <div class="comp-veripura">
+      <div class="comp-vp-header">
+        <span class="comp-vp-logo">Veri<span>Pura</span></span>
+        <span class="comp-vp-tag">Only End-to-End Solution</span>
+      </div>
+      <div class="comp-vp-moats">
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">AI Agent Compliance</div>
+            <div class="comp-moat-desc">Auto-validate, auto-correct documentation before departure from origin country</div>
+          </div>
+        </div>
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">Blockchain Attestation</div>
+            <div class="comp-moat-desc">IOTA immutable record — customs verifies instantly; proprietary data flywheel compounds with every shipment</div>
+          </div>
+        </div>
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">Freight Partner Channel</div>
+            <div class="comp-moat-desc">6× CAC advantage — €1,200 partner vs €9,500 direct; structural distribution moat self-reinforces</div>
+          </div>
+        </div>
+        <div class="comp-moat">
+          <div class="comp-moat-icon">✓</div>
+          <div>
+            <div class="comp-moat-title">Domain Expertise Moat</div>
+            <div class="comp-moat-desc">18 years of food export compliance encoded in the product — knowing which cert Thai mango needs to enter Amsterdam takes years to replicate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <div class="comp-exits-title">Comparable Exits at VeriPura's Y5 Profile (€33.2M ARR · 79% GM · 33% EBITDA)</div>
+      <div class="comp-exits-grid">
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">Veeva Systems</div>
+          <div class="comp-exit-sector">Life sciences compliance</div>
+          <div class="comp-exit-multiple">10–14× ARR</div>
+        </div>
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">project44</div>
+          <div class="comp-exit-sector">AI supply chain visibility</div>
+          <div class="comp-exit-multiple">12–18× ARR</div>
+        </div>
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">TraceLink</div>
+          <div class="comp-exit-sector">Pharma supply chain compliance</div>
+          <div class="comp-exit-multiple">7–10× ARR</div>
+        </div>
+        <div class="comp-exit-card">
+          <div class="comp-exit-name">Descartes Systems</div>
+          <div class="comp-exit-sector">Logistics compliance</div>
+          <div class="comp-exit-multiple">8–12× ARR</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ── FOUNDERS ─────────────────────────────────────────────────────────────── -->
 <section class="section" id="founders">
   <div class="section-inner">
@@ -781,6 +1147,98 @@
   </div>
 </section>
 
+
+
+<!-- ── PROCEEDS ──────────────────────────────────────────────────────────── -->
+<section class="section" id="proceeds" style="background: var(--cream);">
+  <div class="section-inner">
+    <h2 class="section-title">Use of <span>Proceeds</span></h2>
+    <p class="section-desc">€750K · 18-month runway to Series A readiness · Deployed across five workstreams</p>
+    <hr class="divider">
+
+    <div class="proceeds-layout">
+      <div class="proceeds-bars">
+        <div class="proceeds-bar-row">
+          <div class="proceeds-bar-label">Product &amp; AI Technology</div>
+          <div class="proceeds-bar-track">
+            <div class="proceeds-bar-fill" style="width: 39%; background: var(--blue);"></div>
+          </div>
+          <div class="proceeds-bar-amount">€295K <span class="proceeds-pct">39%</span></div>
+        </div>
+        <div class="proceeds-bar-note">AI agent build · IOTA integration · Cloud infrastructure (GCP) · SOC2 audit</div>
+
+        <div class="proceeds-bar-row">
+          <div class="proceeds-bar-label">Key Hires</div>
+          <div class="proceeds-bar-track">
+            <div class="proceeds-bar-fill" style="width: 24%; background: var(--navy);"></div>
+          </div>
+          <div class="proceeds-bar-amount">€180K <span class="proceeds-pct">24%</span></div>
+        </div>
+        <div class="proceeds-bar-note">CTO (12-month partial) · Controller/CFO · CEO reduced draw</div>
+
+        <div class="proceeds-bar-row">
+          <div class="proceeds-bar-label">Go-to-Market</div>
+          <div class="proceeds-bar-track">
+            <div class="proceeds-bar-fill" style="width: 17%; background: var(--blue-lt);"></div>
+          </div>
+          <div class="proceeds-bar-amount">€125K <span class="proceeds-pct">17%</span></div>
+        </div>
+        <div class="proceeds-bar-note">Freight partner BD · EU direct sales · FDA US market entry</div>
+
+        <div class="proceeds-bar-row">
+          <div class="proceeds-bar-label">Regulatory &amp; Legal</div>
+          <div class="proceeds-bar-track">
+            <div class="proceeds-bar-fill" style="width: 7%; background: var(--muted);"></div>
+          </div>
+          <div class="proceeds-bar-amount">€55K <span class="proceeds-pct">7%</span></div>
+        </div>
+        <div class="proceeds-bar-note">EU entity · GDPR compliance · IP filings</div>
+
+        <div class="proceeds-bar-row">
+          <div class="proceeds-bar-label">Contingency</div>
+          <div class="proceeds-bar-track">
+            <div class="proceeds-bar-fill" style="width: 13%; background: var(--border);"></div>
+          </div>
+          <div class="proceeds-bar-amount">€95K <span class="proceeds-pct">13%</span></div>
+        </div>
+        <div class="proceeds-bar-note">Operational buffer · First close bridge if needed</div>
+      </div>
+
+      <div class="milestones">
+        <div class="milestones-title">Milestones This Capital Unlocks</div>
+        <div class="milestone-item">
+          <div class="milestone-dot milestone-dot--gold"></div>
+          <div>
+            <div class="milestone-year">Q2 2026 — Y1</div>
+            <div class="milestone-text">Anchor freight partner LOI signed · 28+ EU/US food importers live · First blockchain-attested shipment · ARR exit rate €208K</div>
+          </div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-dot"></div>
+          <div>
+            <div class="milestone-year">Q1 2027 — Y2</div>
+            <div class="milestone-text">Series A process launched at €1.24M ARR · 3 freight partners · Magic Number 16.5× · NRR ≥110%</div>
+          </div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-dot"></div>
+          <div>
+            <div class="milestone-year">Q2 2028 — Y3</div>
+            <div class="milestone-text">Series B €18M · Vitamins &amp; Supplements module live · 449 active clients · ARR €5.19M · EBITDA approaching breakeven</div>
+          </div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-dot milestone-dot--blue"></div>
+          <div>
+            <div class="milestone-year">Y4–Y5</div>
+            <div class="milestone-text">EBITDA positive Y4 (€2.46M) · Cash from operations self-funding · 2,610 clients · €33.2M net revenue · Exit window opens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- ── SAFE TERMS ────────────────────────────────────────────────────────── -->
 <section class="section" id="invest" style="background: var(--white);">
@@ -824,6 +1282,18 @@
         <div class="safe-label">Governing Law</div>
         <div class="safe-value">English Law</div>
         <div class="safe-note">Singapore venue · SIAC arbitration rules</div>
+      </div>
+
+      <div class="safe-card">
+        <div class="safe-label">Minimum Cheque</div>
+        <div class="safe-value">€25,000</div>
+        <div class="safe-note">Angels welcome · Institutional tranches available</div>
+      </div>
+
+      <div class="safe-card safe-card--highlight">
+        <div class="safe-label">First Close</div>
+        <div class="safe-value">€150,000</div>
+        <div class="safe-note">Open now · Target close within 60 days</div>
       </div>
 
     </div>
