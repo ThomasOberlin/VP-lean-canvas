@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeriPura — Lean Canvas · Seed Stage · CONFIDENTIAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ─────────────────────────────────────────────────────── */
+  :root {
+    --navy:      #0F2444;
+    --navy-mid:  #1F3864;
+    --blue:      #2E5FA3;
+    --blue-lt:   #4A80C4;
+    --sky:       #D6E4F0;
+    --pale:      #EBF3FA;
+    --cream:     #F8F9FB;
+    --red:       #C8504A;
+    --gold:      #D4A847;
+    --white:     #FFFFFF;
+    --ink:       #1A2332;
+    --muted:     #5A6878;
+    --border:    #CBD8E8;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-sans:  'DM Sans', system-ui, sans-serif;
+    --font-mono:  'DM Mono', monospace;
+  }
+
+  /* ── RESET ───────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ──────────────────────────────────────────────────────── */
+  .site-header {
+    background: var(--navy);
+    padding: 0 3rem;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 2px solid var(--blue);
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .site-header .logo {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .site-header .logo span { color: var(--gold); }
+  .site-header nav { display: flex; gap: 1.5rem; align-items: center; }
+  .site-header nav a {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--sky);
+    text-decoration: none; transition: color .2s;
+  }
+  .site-header nav a:hover { color: var(--gold); }
+  .btn-pdf {
+    background: var(--gold); color: var(--navy);
+    border: none; border-radius: 4px;
+    font-family: var(--font-sans); font-size: 0.75rem;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.45rem 1.1rem; cursor: pointer;
+    transition: opacity .2s; text-decoration: none;
+  }
+  .btn-pdf:hover { opacity: .85; }
+
+  /* ── HERO ─────────────────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #1a3a6e 100%);
+    padding: 4.5rem 3rem 3.5rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234A80C4' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(212,168,71,.15); border: 1px solid rgba(212,168,71,.4);
+    color: var(--gold); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border-radius: 3px; margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white); line-height: 1.15; margin-bottom: 0.6rem;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--sky);
+    max-width: 620px; margin-bottom: 2rem;
+  }
+  .hero-kpis {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .kpi {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px; padding: 1rem 1.4rem; min-width: 140px;
+    animation: fadeUp .6s ease both;
+  }
+  .kpi:nth-child(1){animation-delay:.1s}
+  .kpi:nth-child(2){animation-delay:.2s}
+  .kpi:nth-child(3){animation-delay:.3s}
+  .kpi:nth-child(4){animation-delay:.4s}
+  .kpi:nth-child(5){animation-delay:.5s}
+  .kpi-val {
+    font-family: var(--font-serif); font-size: 1.55rem;
+    color: var(--white); display: block; line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .kpi-val.accent { color: var(--gold); }
+  .kpi-lbl { font-size: 0.7rem; color: var(--sky); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* ── SECTION WRAPPERS ────────────────────────────────────────────── */
+  .section { padding: 3.5rem 3rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-title {
+    font-family: var(--font-serif); font-size: 1.7rem;
+    color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .section-title span { color: var(--blue); }
+  .section-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  .divider { height: 3px; background: linear-gradient(90deg, var(--blue) 0%, var(--sky) 100%); border: none; margin-bottom: 2rem; border-radius: 2px; }
+
+  /* ── CANVAS GRID ─────────────────────────────────────────────────── */
+  #canvas { background: var(--white); }
+  .canvas-hint {
+    font-size: 0.78rem; color: var(--muted);
+    display: flex; align-items: center; gap: 0.4rem; margin-bottom: 1.5rem;
+  }
+  .canvas-hint::before { content: '↗'; color: var(--blue); font-size: 1rem; }
+
+  .canvas-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+  }
+
+  /* cell spanning */
+  .cell-problem    { grid-column: 1; grid-row: 1 / 3; }
+  .cell-solution   { grid-column: 2; grid-row: 1; }
+  .cell-uvp        { grid-column: 3; grid-row: 1 / 3; }
+  .cell-advantage  { grid-column: 4; grid-row: 1; }
+  .cell-segments   { grid-column: 5; grid-row: 1 / 3; }
+  .cell-altmetrics { grid-column: 2; grid-row: 2; }
+  .cell-metrics    { grid-column: 4; grid-row: 2; }
+  .cell-cost       { grid-column: 1 / 3; grid-row: 3; }
+  .cell-revenue    { grid-column: 3 / 6; grid-row: 3; }
+
+  /* canvas cell base */
+  .canvas-cell {
+    background: var(--pale);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.2rem;
+    cursor: pointer;
+    position: relative;
+    transition: border-color .2s, box-shadow .2s, transform .15s;
+    overflow: hidden;
+  }
+  .canvas-cell::after {
+    content: 'Click to expand';
+    position: absolute; bottom: 0.6rem; right: 0.7rem;
+    font-size: 0.65rem; color: var(--blue-lt); letter-spacing: 0.05em;
+    opacity: 0; transition: opacity .2s;
+    font-family: var(--font-mono);
+  }
+  .canvas-cell:hover { border-color: var(--blue); box-shadow: 0 4px 20px rgba(46,95,163,.12); transform: translateY(-1px); }
+  .canvas-cell:hover::after { opacity: 1; }
+
+  /* colour variants */
+  .canvas-cell.dark { background: var(--navy-mid); border-color: var(--navy); }
+  .canvas-cell.mid  { background: var(--sky); border-color: var(--border); }
+  .canvas-cell.accent-cell { border-left: 3px solid var(--red); }
+
+  .cell-header {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;
+  }
+  .canvas-cell.dark .cell-header { color: var(--sky); }
+  .cell-header .cell-icon { font-size: 0.9rem; }
+
+  .cell-headline {
+    font-family: var(--font-serif); font-size: 1rem;
+    color: var(--navy); line-height: 1.3; margin-bottom: 0.5rem;
+  }
+  .canvas-cell.dark .cell-headline { color: var(--white); }
+
+  .cell-preview {
+    font-size: 0.78rem; color: var(--muted); line-height: 1.45;
+  }
+  .canvas-cell.dark .cell-preview { color: var(--sky); }
+
+  .cell-tags {
+    display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.6rem;
+  }
+  .tag {
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; padding: 0.15rem 0.5rem;
+    border-radius: 3px; background: rgba(46,95,163,.1); color: var(--blue);
+  }
+  .tag.red   { background: rgba(200,80,74,.1); color: var(--red); }
+  .tag.gold  { background: rgba(212,168,71,.15); color: var(--gold); }
+  .tag.navy  { background: rgba(15,36,68,.08); color: var(--navy); }
+
+  /* ── MODAL ────────────────────────────────────────────────────────── */
+  .modal-backdrop {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(10,20,40,.7);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s;
+  }
+  .modal-backdrop.open { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--white); border-radius: 12px;
+    max-width: 680px; width: 100%;
+    max-height: 85vh; overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(10,20,40,.35);
+    transform: translateY(16px) scale(.98);
+    transition: transform .25s;
+    position: relative;
+  }
+  .modal-backdrop.open .modal { transform: translateY(0) scale(1); }
+
+  .modal-header {
+    background: var(--navy);
+    padding: 1.4rem 1.6rem 1.2rem;
+    border-radius: 12px 12px 0 0;
+    position: sticky; top: 0;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem;
+  }
+  .modal-header-text {}
+  .modal-section-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+  }
+  .modal-title {
+    font-family: var(--font-serif); font-size: 1.4rem;
+    color: var(--white); line-height: 1.2;
+  }
+  .modal-close {
+    background: rgba(255,255,255,.1); border: none;
+    color: var(--white); font-size: 1.2rem; width: 32px; height: 32px;
+    border-radius: 50%; cursor: pointer; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,.2); }
+
+  .modal-body { padding: 1.6rem; }
+
+  .modal-block { margin-bottom: 1.4rem; }
+  .modal-block:last-child { margin-bottom: 0; }
+  .modal-block-title {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 0.6rem; padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-block-title.red { color: var(--red); border-color: rgba(200,80,74,.2); }
+
+  .modal-ul {
+    list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .modal-ul li {
+    font-size: 0.84rem; color: var(--ink); line-height: 1.5;
+    padding-left: 1.2rem; position: relative;
+  }
+  .modal-ul li::before {
+    content: '▸'; position: absolute; left: 0;
+    color: var(--blue); font-size: 0.75rem; top: 0.05rem;
+  }
+  .modal-ul li strong { color: var(--navy); }
+
+  /* data table in modal */
+  .data-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.8rem; margin-top: 0.5rem;
+  }
+  .data-table th {
+    background: var(--navy); color: var(--white);
+    padding: 0.5rem 0.7rem; text-align: left;
+    font-weight: 500; font-size: 0.72rem; letter-spacing: 0.04em;
+  }
+  .data-table td {
+    padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--border);
+    color: var(--ink);
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--pale); }
+  .data-table td.num { font-family: var(--font-mono); font-size: 0.78rem; }
+  .data-table td.pos { color: #1e7e34; font-weight: 500; }
+  .data-table td.neg { color: var(--red); }
+
+  /* ── CHARTS SECTION ──────────────────────────────────────────────── */
+  #charts { background: var(--cream); }
+  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .chart-card {
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 1.4rem;
+  }
+  .chart-card-title {
+    font-family: var(--font-serif); font-size: 1.05rem;
+    color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .chart-card-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.2rem; }
+
+  /* SVG bar chart */
+  .bar-chart { width: 100%; }
+  .bar-group text { font-family: var(--font-mono); }
+
+  /* CPI heat map */
+  .heatmap-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px; margin-top: 0.5rem;
+  }
+  .heatmap-item {
+    border-radius: 6px; padding: 0.55rem 0.7rem;
+    position: relative; overflow: hidden;
+  }
+  .heatmap-country { font-size: 0.72rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
+  .heatmap-score   { font-family: var(--font-mono); font-size: 1rem; font-weight: 500; color: rgba(255,255,255,.9); }
+  .heatmap-label   { font-size: 0.6rem; color: rgba(255,255,255,.7); letter-spacing: 0.04em; }
+  .heatmap-bar {
+    position: absolute; bottom: 0; left: 0; height: 3px;
+    background: rgba(255,255,255,.5); border-radius: 0 2px 2px 0;
+  }
+
+  /* ── FOUNDERS ────────────────────────────────────────────────────── */
+  #founders { background: var(--white); }
+  .founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .founder-card {
+    border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 1.6rem; position: relative; overflow: hidden;
+  }
+  .founder-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue-lt) 100%);
+  }
+  .founder-initial {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--navy); color: var(--white);
+    font-family: var(--font-serif); font-size: 1.4rem;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .founder-name { font-family: var(--font-serif); font-size: 1.25rem; color: var(--navy); }
+  .founder-role {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 0.7rem;
+  }
+  .founder-bio { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.8rem; }
+  .founder-email {
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--blue);
+    text-decoration: none;
+  }
+  .founder-email:hover { text-decoration: underline; }
+
+  /* ── CTA ──────────────────────────────────────────────────────────── */
+  #cta {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    padding: 4rem 3rem; text-align: center;
+  }
+  #cta h2 {
+    font-family: var(--font-serif); font-size: 2rem;
+    color: var(--white); margin-bottom: 0.6rem;
+  }
+  #cta p { color: var(--sky); font-size: 0.95rem; margin-bottom: 2rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 2rem; border-radius: 5px;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; transition: opacity .2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { opacity: .85; }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    border: 1.5px solid rgba(255,255,255,.4);
+    padding: 0.85rem 2rem; border-radius: 5px;
+    font-weight: 500; font-size: 0.9rem;
+    text-decoration: none; transition: border-color .2s;
+  }
+  .btn-secondary:hover { border-color: var(--white); }
+
+  /* ── FOOTER ──────────────────────────────────────────────────────── */
+  footer {
+    background: var(--navy); padding: 1.2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  /* ── ANIMATIONS ──────────────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: fadeUp .5s ease both; }
+
+  /* ── PRINT ────────────────────────────────────────────────────────── */
+  @media print {
+    .site-header, #cta, footer, .btn-pdf, .canvas-cell::after { display: none !important; }
+    .modal-backdrop { display: none !important; }
+    .canvas-cell { cursor: default; break-inside: avoid; }
+    body { background: white; }
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .canvas-grid { grid-template-columns: 1fr 1fr; }
+    .cell-problem, .cell-uvp, .cell-segments { grid-column: auto; grid-row: auto; }
+    .cell-cost, .cell-revenue { grid-column: auto; }
+    .charts-grid, .founders-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 0 1.2rem; }
+    .hero, .section { padding-left: 1.2rem; padding-right: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="logo">Veri<span>Pura</span></div>
+  <nav>
+    <a href="#canvas">Canvas</a>
+    <a href="#charts">Financials</a>
+    <a href="#founders">Team</a>
+    <a href="#cta">Contact</a>
+    <button class="btn-pdf" onclick="window.print()">↓ Print / PDF</button>
+  </nav>
+</header>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Confidential · Seed Stage · March 2026</div>
+    <h1>AI-Powered Compliance for<br><em>Regulated Food Imports</em></h1>
+    <p class="hero-sub">Preventing border rejections before a shipment leaves the country of origin — automatically, immutably, at scale.</p>
+    <div class="hero-kpis">
+      <div class="kpi"><span class="kpi-val accent">€750K</span><span class="kpi-lbl">SAFE · €3.75M Cap</span></div>
+      <div class="kpi"><span class="kpi-val">€33.2M</span><span class="kpi-lbl">Y5 Net Revenue</span></div>
+      <div class="kpi"><span class="kpi-val">110–118%</span><span class="kpi-lbl">Net Revenue Retention</span></div>
+      <div class="kpi"><span class="kpi-val accent">26–60×</span><span class="kpi-lbl">Investor MOIC (Bear–Bull)</span></div>
+      <div class="kpi"><span class="kpi-val">€170B+</span><span class="kpi-lbl">EU Food Import SAM</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CANVAS ─────────────────────────────────────────────────────────────── -->
+<section class="section" id="canvas">
+  <div class="section-inner">
+    <h2 class="section-title">Lean Startup <span>Canvas</span></h2>
+    <p class="section-desc">Click any cell to expand full detail.</p>
+    <hr class="divider">
+    <p class="canvas-hint">Each section opens a detailed overlay with full content from the revised canvas.</p>
+
+    <div class="canvas-grid">
+
+      <!-- PROBLEM -->
+      <div class="canvas-cell accent-cell cell-problem" onclick="openModal('problem')">
+        <div class="cell-header"><span class="cell-icon">⚠</span> Problem</div>
+        <div class="cell-headline">Structurally broken cross-border food documentation</div>
+        <p class="cell-preview">Rejections pre-date regulation. Importers in high-compliance markets bear full legal accountability for supplier failures in low-CPI corridors — with no real-time correction capability.</p>
+        <div class="cell-tags">
+          <span class="tag red">Pre-existing</span>
+          <span class="tag">EUDR</span>
+          <span class="tag">FSMA 204</span>
+          <span class="tag">Farm to Fork</span>
+          <span class="tag">Mercosur</span>
+        </div>
+      </div>
+
+      <!-- SOLUTION -->
+      <div class="canvas-cell cell-solution" onclick="openModal('solution')">
+        <div class="cell-header"><span class="cell-icon">⚙</span> Solution</div>
+        <div class="cell-headline">AI Agents · Blockchain Attestation · Freight Partner Channel</div>
+        <p class="cell-preview">Auto-validate, auto-correct, and immutably attest compliance documentation before departure from origin country.</p>
+        <div class="cell-tags"><span class="tag">IOTA</span><span class="tag navy">Web3-native</span></div>
+      </div>
+
+      <!-- UVP -->
+      <div class="canvas-cell cell-uvp" onclick="openModal('uvp')">
+        <div class="cell-header"><span class="cell-icon">◈</span> Unique Value Proposition</div>
+        <div class="cell-headline">"The only platform that prevents food import rejection at the border — automatically, before the shipment leaves."</div>
+        <p class="cell-preview">Core value exists because cross-border documentation is structurally broken. Regulations amplify an urgent problem — they don't create it.</p>
+        <div class="cell-tags"><span class="tag gold">Border-ready</span><span class="tag">Automated</span><span class="tag">Attested</span></div>
+      </div>
+
+      <!-- UNFAIR ADVANTAGE -->
+      <div class="canvas-cell cell-advantage" onclick="openModal('advantage')">
+        <div class="cell-header"><span class="cell-icon">🔒</span> Unfair Advantage</div>
+        <div class="cell-headline">Institutional knowledge + network effects + compounding data flywheel</div>
+        <p class="cell-preview">18+ years food export compliance encoded in the product. Blockchain attestation dataset grows and compounds with every shipment.</p>
+        <div class="cell-tags"><span class="tag navy">Cannot be copied</span><span class="tag">€14M track record</span></div>
+      </div>
+
+      <!-- CUSTOMER SEGMENTS -->
+      <div class="canvas-cell cell-segments" onclick="openModal('segments')">
+        <div class="cell-header"><span class="cell-icon">◎</span> Customer Segments</div>
+        <div class="cell-headline">EU/EEA · UK · US · Switzerland · GCC · Canada</div>
+        <p class="cell-preview">~10,000 EU/EEA SME food importers. ~3,500 US importers. 2,000 dual-compliance accounts (highest ARPA). Brazilian-corridor importers: highest-urgency 2026 segment.</p>
+        <div class="cell-tags">
+          <span class="tag">SME importers</span><span class="tag gold">Dual EU/US</span>
+          <span class="tag red">Brazil corridor</span>
+        </div>
+      </div>
+
+      <!-- ALT / KEY METRICS combined cell -->
+      <div class="canvas-cell cell-altmetrics" onclick="openModal('metrics')">
+        <div class="cell-header"><span class="cell-icon">📊</span> Key Metrics</div>
+        <div class="cell-headline">135× LTV:CAC · 110–118% NRR · €226K ARR/FTE</div>
+        <p class="cell-preview">21 → 2,610 clients Y1→Y5. CAC payback 2.1 months (Y3). Magic Number 16.5× driven by freight partner channel efficiency.</p>
+        <div class="cell-tags"><span class="tag">Y4 EBITDA+</span><span class="tag navy">Series A Y2</span></div>
+      </div>
+
+      <!-- WHY NOW + CHANNELS combined -->
+      <div class="canvas-cell cell-metrics" onclick="openModal('whynow')">
+        <div class="cell-header"><span class="cell-icon">⏱</span> Why Now · Channels</div>
+        <div class="cell-headline">Three converging mandates + EU–Mercosur + pre-existing demand</div>
+        <p class="cell-preview">EUDR Dec 2026. FSMA 204 obligations active now. Farm to Fork phasing 2026–2027. Mercosur signed Jan 2026. Founder network + freight partner channel + IOTA co-marketing.</p>
+        <div class="cell-tags"><span class="tag red">Regulatory tailwind</span><span class="tag">TWIN pilot</span></div>
+      </div>
+
+      <!-- COST STRUCTURE -->
+      <div class="canvas-cell mid cell-cost" onclick="openModal('cost')">
+        <div class="cell-header"><span class="cell-icon">💶</span> Cost Structure</div>
+        <div class="cell-headline">€750K seed deployed across product, team, GTM</div>
+        <p class="cell-preview">AI Agent Architecture + IOTA: €200K · Cloud + SOC2: €50K · Key hires: €180K · GTM: €125K · Legal/Regulatory: €55K · Ops + contingency: €140K. Monthly burn: €46K (Y1) → €55K (Y2). COGS declining 29%→21% Y1→Y5.</p>
+      </div>
+
+      <!-- REVENUE STREAMS -->
+      <div class="canvas-cell mid cell-revenue" onclick="openModal('revenue')">
+        <div class="cell-header"><span class="cell-icon">📈</span> Revenue Streams</div>
+        <div class="cell-headline">Subscription + Per-Shipment Attestation · 79% Gross Margin at Y5</div>
+        <p class="cell-preview">€199–€899/month subscription (~80% of revenue) + €15–€280/shipment attestation (~20%). VeriPura retains 80→90% of gross revenue as freight partner share ramps down. Y5: €33.2M net revenue · €11.1M EBITDA (33.5%).</p>
+        <div class="cell-tags"><span class="tag gold">VeriLiquid optionality</span><span class="tag">ACV €9.9K→€12.7K</span></div>
+      </div>
+
+    </div><!-- /canvas-grid -->
+  </div>
+</section>
+
+<!-- ── CHARTS ─────────────────────────────────────────────────────────────── -->
+<section class="section" id="charts">
+  <div class="section-inner">
+    <h2 class="section-title">5-Year <span>Financial Snapshot</span></h2>
+    <p class="section-desc">Based on VeriPura_Financial_Model_v5.xlsx · All values in Euro (€)</p>
+    <hr class="divider">
+    <div class="charts-grid">
+
+      <!-- ARR chart -->
+      <div class="chart-card">
+        <div class="chart-card-title">Net Revenue Trajectory</div>
+        <div class="chart-card-sub">Y1 2026 → Y5 2030 · 255% CAGR</div>
+        <svg class="bar-chart" viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- max value €33.16M → scale to 170px height -->
+          <defs>
+            <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2E5FA3"/>
+              <stop offset="100%" stop-color="#4A80C4" stop-opacity=".7"/>
+            </linearGradient>
+            <linearGradient id="barGradGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#D4A847"/>
+              <stop offset="100%" stop-color="#D4A847" stop-opacity=".6"/>
+            </linearGradient>
+          </defs>
+          <!-- Y axis labels -->
+          <text x="0" y="30"  fill="#5A6878" font-size="9" font-family="DM Mono,monospace">€33M</text>
+          <text x="0" y="80"  fill="#5A6878" font-size="9" font-family="DM Mono,monospace">€20M</text>
+          <text x="0" y="130" fill="#5A6878" font-size="9" font-family="DM Mono,monospace">€8M</text>
+          <!-- grid lines -->
+          <line x1="35" y1="25"  x2="415" y2="25"  stroke="#E0E8F0" stroke-width="1"/>
+          <line x1="35" y1="75"  x2="415" y2="75"  stroke="#E0E8F0" stroke-width="1"/>
+          <line x1="35" y1="125" x2="415" y2="125" stroke="#E0E8F0" stroke-width="1"/>
+          <line x1="35" y1="175" x2="415" y2="175" stroke="#CBD8E8" stroke-width="1"/>
+          <!-- bars: Y1 €208K, Y2 €1.24M, Y3 €5.19M, Y4 €15.0M, Y5 €33.2M -->
+          <!-- scale: 33.2M = 150px → 1M = 4.52px -->
+          <rect x="50"  y="174" width="52" height="1"   fill="url(#barGrad)" rx="2"/>
+          <rect x="126" y="169" width="52" height="6"   fill="url(#barGrad)" rx="2"/>
+          <rect x="202" y="152" width="52" height="23"  fill="url(#barGrad)" rx="2"/>
+          <rect x="278" y="107" width="52" height="68"  fill="url(#barGrad)" rx="2"/>
+          <rect x="354" y="25"  width="52" height="150" fill="url(#barGradGold)" rx="2"/>
+          <!-- labels -->
+          <text x="76"  y="168" fill="#1F3864" font-size="8" font-family="DM Mono,monospace" text-anchor="middle">€208K</text>
+          <text x="152" y="163" fill="#1F3864" font-size="8" font-family="DM Mono,monospace" text-anchor="middle">€1.24M</text>
+          <text x="228" y="146" fill="#1F3864" font-size="8" font-family="DM Mono,monospace" text-anchor="middle">€5.19M</text>
+          <text x="304" y="101" fill="#1F3864" font-size="8" font-family="DM Mono,monospace" text-anchor="middle">€15.0M</text>
+          <text x="380" y="19"  fill="#D4A847" font-size="8" font-family="DM Mono,monospace" text-anchor="middle" font-weight="600">€33.2M</text>
+          <!-- x labels -->
+          <text x="76"  y="192" fill="#5A6878" font-size="9" font-family="DM Sans,sans-serif" text-anchor="middle">Y1 '26</text>
+          <text x="152" y="192" fill="#5A6878" font-size="9" font-family="DM Sans,sans-serif" text-anchor="middle">Y2 '27</text>
+          <text x="228" y="192" fill="#5A6878" font-size="9" font-family="DM Sans,sans-serif" text-anchor="middle">Y3 '28</text>
+          <text x="304" y="192" fill="#5A6878" font-size="9" font-family="DM Sans,sans-serif" text-anchor="middle">Y4 '29</text>
+          <text x="380" y="192" fill="#D4A847" font-size="9" font-family="DM Sans,sans-serif" text-anchor="middle" font-weight="600">Y5 '30</text>
+        </svg>
+      </div>
+
+      <!-- CPI heat map -->
+      <div class="chart-card">
+        <div class="chart-card-title">CPI Corridor Heat Map</div>
+        <div class="chart-card-sub">Origin countries by Corruption Perceptions Index score (0=highly corrupt, 100=very clean) · Transparency International 2024</div>
+        <div class="heatmap-grid" id="heatmap"></div>
+      </div>
+
+    </div>
+
+    <!-- financial table -->
+    <div style="margin-top:2rem;">
+      <div class="chart-card">
+        <div class="chart-card-title">Income Statement Summary</div>
+        <div class="chart-card-sub">Fiscal years 2026–2030 · Euro (€)</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Line Item</th>
+              <th>Y1 2026</th><th>Y2 2027</th><th>Y3 2028</th><th>Y4 2029</th><th>Y5 2030</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Net Revenue</td><td class="num">€208K</td><td class="num">€1.24M</td><td class="num">€5.19M</td><td class="num">€15.0M</td><td class="num pos">€33.2M</td></tr>
+            <tr><td>Gross Margin</td><td class="num">71%</td><td class="num">73%</td><td class="num">75%</td><td class="num">77%</td><td class="num pos">79%</td></tr>
+            <tr><td>EBITDA</td><td class="num neg">(€592K)</td><td class="num neg">(€889K)</td><td class="num neg">(€700K)</td><td class="num pos">€2.46M</td><td class="num pos">€11.1M</td></tr>
+            <tr><td>EBITDA Margin</td><td class="num neg">-284%</td><td class="num neg">-72%</td><td class="num neg">-13%</td><td class="num pos">16.4%</td><td class="num pos">33.5%</td></tr>
+            <tr><td>Cash EOP</td><td class="num">€187K</td><td class="num">€3.41M</td><td class="num">€21.5M</td><td class="num">€25.9M</td><td class="num pos">€40.3M</td></tr>
+            <tr><td>Active Clients</td><td class="num">21</td><td class="num">122</td><td class="num">449</td><td class="num">1,237</td><td class="num pos">2,610</td></tr>
+            <tr><td>FTEs</td><td class="num">6</td><td class="num">11</td><td class="num">23</td><td class="num">39</td><td class="num">57</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDERS ─────────────────────────────────────────────────────────────── -->
+<section class="section" id="founders">
+  <div class="section-inner">
+    <h2 class="section-title">Founding <span>Team</span></h2>
+    <p class="section-desc">Domain expertise meets serial entrepreneurship.</p>
+    <hr class="divider">
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-initial">OS</div>
+        <div class="founder-name">Onno Stienen</div>
+        <div class="founder-role">Co-Founder &amp; CEO</div>
+        <p class="founder-bio">18+ years operating in food export and import compliance across Southeast Asia and the EU, including direct experience with Thai and Vietnamese supply chains (Bangkok-based food ops, onoff spices). EU food import compliance expert with an active regulatory network across the Netherlands, Belgium and key import hubs. The regulatory knowledge encoded in VeriPura's compliance engine is his institutional expertise.</p>
+        <a class="founder-email" href="mailto:onno@veripura.com">onno@veripura.com</a>
+      </div>
+      <div class="founder-card">
+        <div class="founder-initial">TO</div>
+        <div class="founder-name">Thomas Oberlin</div>
+        <div class="founder-role">Co-Founder &amp; COO</div>
+        <p class="founder-bio">Serial entrepreneur with €14M raised across prior ventures including SmartCube and MightyGreens. Grew up on a dairy farm and worked in food processing — a firsthand understanding of the supply chain problems VeriPura solves. Italy-based with deep EU investor relationships and a direct sales background in complex B2B environments. Leads fundraising, partnerships and go-to-market.</p>
+        <a class="founder-email" href="mailto:thomas@veripura.com">thomas@veripura.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────────────────────────── -->
+<section id="cta">
+  <h2>Request the Data Room</h2>
+  <p>Full SAFE documents, financial model and investor materials available on request.</p>
+  <div class="cta-buttons">
+    <a class="btn-primary" href="mailto:onno@veripura.com?cc=thomas@veripura.com&subject=VeriPura%20Seed%20-%20Data%20Room%20Request">Request Data Room</a>
+    <a class="btn-secondary" href="mailto:onno@veripura.com?cc=thomas@veripura.com&subject=VeriPura%20Seed%20-%20Investor%20Inquiry">Get in Touch</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer>
+  <p>VeriPura · CONFIDENTIAL · March 2026 · Based on VeriPura_Financial_Model_v5.xlsx · Lean Canvas framework by Ash Maurya (leanstack.com)</p>
+  <p>www.veripura.com</p>
+</footer>
+
+<!-- ── MODAL ───────────────────────────────────────────────────────────────── -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <div class="modal-section-label" id="modalLabel"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+// ── MODAL DATA ──────────────────────────────────────────────────────────────
+const MODALS = {
+  problem: {
+    label: 'Problem',
+    title: 'Structurally Broken Cross-Border Food Documentation',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title red">Core Problem — Pre-existing &amp; Independent of Regulation</div>
+        <ul class="modal-ul">
+          <li>Imported food, vitamins &amp; supplements are routinely delayed, rejected or destroyed at borders due to incorrect, missing or unattested compliance documentation and product safety failures. <strong>This problem pre-dates and exists independently of any new regulation.</strong></li>
+          <li>Importers in high-compliance markets (EU, UK, US, Switzerland, EEA, Canada, GCC) bear full legal accountability for documentation failures originating in <strong>low Corruption Perceptions Index (CPI) countries</strong> — where document authenticity and regulatory enforcement are structurally unreliable — with no real-time visibility or pre-departure correction capability.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Regulatory Acceleration Layer</div>
+        <ul class="modal-ul">
+          <li>Three converging mandates add material new documentary obligation on top of an already heavy burden — with no automated compliance tooling available at scale:</li>
+          <li><strong>EUDR:</strong> enforcement Dec 2026 (large operators), Jun 2027 (SMEs) — deforestation due diligence + DDS via TRACES required for cocoa, coffee, soy, palm oil, beef, rubber, timber.</li>
+          <li><strong>FDA FSMA 204:</strong> requirements legally in force; enforcement extended to Jul 2028. Preparation obligations active now.</li>
+          <li><strong>EU/EEA Farm to Fork:</strong> import equivalence standards requiring digital traceability and geospatial sourcing documentation from non-EU/EEA suppliers, phasing 2026–2027. VeriPura is the importer-side attestation layer converting this obligation into border-ready documentation.</li>
+          <li><strong>EU–Mercosur Agreement:</strong> signed Jan 2026 (ratification pending). Dramatically increases regulated import volumes from Brazil, Argentina, Paraguay, Uruguay — all commodities subject to EUDR deforestation attestation.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Existing Alternatives (All Inadequate)</div>
+        <ul class="modal-ul">
+          <li>Manual process via email/PDF/consultants — slow, error-prone, unscalable</li>
+          <li>ERP compliance modules (SAP/Oracle) — built for manufacturers; 18-month deployments; not designed for importers</li>
+          <li>Point solutions — address one compliance step; no end-to-end AI-native platform exists</li>
+          <li>No Web3-native attestation platform exists for this use case</li>
+        </ul>
+      </div>`
+  },
+  solution: {
+    label: 'Solution',
+    title: 'AI Agents · Blockchain Attestation · Freight Partner Channel',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Top 3 Features</div>
+        <ul class="modal-ul">
+          <li><strong>AI Compliance Agents:</strong> validate supplier certificates, cross-check EU/UK/US/EEA regulatory databases, auto-generate corrected documentation pre-shipment from country of origin.</li>
+          <li><strong>IOTA Blockchain Attestation:</strong> immutable, tamper-proof record of every document; customs verifies in seconds via QR/API; no centralised database required.</li>
+          <li><strong>Freight Partner Embedded Workflow:</strong> platform integrated into forwarder systems; importers onboarded through existing logistics relationships, dramatically reducing acquisition friction and cost.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">9-Stage Workflow</div>
+        <ul class="modal-ul">
+          <li><strong>Intake → Mapping → Parse → Trace → Comply → Shield → Auditor → Verdict → Ledger</strong></li>
+          <li>Every stage produces an auditable output. The Ledger stage writes the final attestation to the IOTA blockchain — immutable and verifiable by customs in seconds.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Y3 Addition</div>
+        <ul class="modal-ul">
+          <li>Vitamins &amp; Supplements compliance module: +57% ARPA on same infrastructure</li>
+        </ul>
+      </div>`
+  },
+  uvp: {
+    label: 'Unique Value Proposition',
+    title: 'The only platform that prevents food import rejection at the border',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Single Clear Message</div>
+        <ul class="modal-ul">
+          <li>The only platform that prevents food import rejection at the border — automatically, before the shipment leaves the country of origin.</li>
+          <li><strong>VeriPura's core value exists because cross-border food documentation is structurally broken. New regulations amplify an already urgent problem — they do not create it.</strong></li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">High-Level Concept</div>
+        <ul class="modal-ul">
+          <li>"DocuSign meets customs compliance" — one integration, AI-handled, blockchain-attested.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Why Compelling</div>
+        <ul class="modal-ul">
+          <li><strong>Mandate, not optional:</strong> every importer VeriPura serves faces legal obligation — EUDR, FSMA 204, Farm to Fork equivalence — by law.</li>
+          <li><strong>Immediate ROI:</strong> €42K average annual savings per client vs. €2.4K–€10.8K annual subscription cost.</li>
+          <li><strong>High stickiness:</strong> blockchain attestation history is non-transferable — switching cost is very high.</li>
+        </ul>
+      </div>`
+  },
+  advantage: {
+    label: 'Unfair Advantage',
+    title: 'Cannot Be Easily Copied or Bought',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Five Structural Moats</div>
+        <ul class="modal-ul">
+          <li><strong>Founder domain knowledge:</strong> 18+ years food export compliance encoded in the product (Stienen) — knowing exactly which phytosanitary cert is required for Thai mango entering Amsterdam in 2026 takes years to replicate. Not a feature: institutional knowledge.</li>
+          <li><strong>Freight partner network effects:</strong> once a forwarder's workflow is integrated, switching disrupts their own client relationships — structural lock-in that is self-reinforcing.</li>
+          <li><strong>Blockchain attestation data flywheel:</strong> every attested shipment adds proprietary training data improving document classification accuracy; a compounding proprietary dataset that grows with each transaction and cannot be replicated by a new entrant.</li>
+          <li><strong>Regulatory expertise moat:</strong> deep IP across EU, UK, EEA, US, GCC, Canadian frameworks encoded directly in the platform — a growing institutional knowledge base, not a static feature set.</li>
+          <li><strong>€14M prior raise track record (Oberlin)</strong> + existing EU investor relationships compress fundraising timeline.</li>
+        </ul>
+      </div>`
+  },
+  segments: {
+    label: 'Customer Segments',
+    title: 'EU/EEA · UK · US · Switzerland · GCC · Canada',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Primary (Paying)</div>
+        <ul class="modal-ul">
+          <li>EU/EEA food &amp; beverage importers (SME): ~10,000 needing EUDR + Farm to Fork import equivalence compliance.</li>
+          <li>UK importers (post-Brexit): separate UK food safety compliance track; no longer covered by EU systems — parallel demand.</li>
+          <li>US food importers: ~3,500 requiring FDA FSMA 204 traceability recordkeeping.</li>
+          <li>Swiss importers: Swiss food law + bilateral EU agreements; parallel but distinct compliance obligations.</li>
+          <li>GCC/Middle East importers: halal certification + food safety documentation burden for sourcing from low-CPI corridors.</li>
+          <li>Canada (SFCA): Safe Food for Canadians Act traceability requirements for importers.</li>
+          <li>Dual EU/US compliance accounts: ~2,000 — <strong>highest-ARPA segment.</strong></li>
+          <li>Brazilian-corridor importers (EU/UK): beef, soy, coffee, cocoa under EU–Mercosur Agreement — <strong>highest-urgency EUDR attestation segment for 2026.</strong></li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Early Adopter Profile</div>
+        <ul class="modal-ul">
+          <li>Dutch/Italian SME food importers sourcing from Thailand, Vietnam, Brazil.</li>
+          <li>5–50 shipments/year; 2–15 FTEs; no dedicated compliance staff.</li>
+          <li>Has already experienced at least one shipment rejection or delay.</li>
+          <li>Willing to pay for certainty over cheapness. Ideal entry via freight forwarder referral.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Y3 Expansion</div>
+        <ul class="modal-ul">
+          <li>Vitamins &amp; supplements importers (EU/UK): €40B+ market; same compliance framework plus forthcoming supplement traceability requirements under General Food Law review — expansion pulled by regulation, not just commercial ambition.</li>
+        </ul>
+      </div>`
+  },
+  metrics: {
+    label: 'Key Metrics',
+    title: '135× LTV:CAC · 110–118% NRR · €226K ARR/FTE',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Growth</div>
+        <ul class="modal-ul">
+          <li>21 → 2,610 clients Y1→Y5 (21 = pipeline snapshot at raise; Y1 target: 28 direct + freight partner introductions)</li>
+          <li>+495% / +319% / +189% YoY revenue growth Y1→Y2→Y3→Y4</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Revenue Quality</div>
+        <ul class="modal-ul">
+          <li>110–118% NRR · 93–96% GRR · 3–6% (Y5→Y1) Logo Churn</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Unit Economics</div>
+        <ul class="modal-ul">
+          <li>Blended CAC €2,040 (Y3) · 135× LTV:CAC (Y3) · 2.1 months CAC Payback (Y3)</li>
+          <li>Partner CAC: €1,200 · Direct CAC: €9,500</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Efficiency</div>
+        <ul class="modal-ul">
+          <li>16.5× Magic Number (Y2) — driven primarily by freight partner channel efficiency (€1,200 vs. €9,500 direct CAC); direct sales efficiency reviewed separately in financial model.</li>
+          <li>0.64× Burn Multiple (Y2) · €226K ARR/FTE (Y3)</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Milestone Gates</div>
+        <ul class="modal-ul">
+          <li>Y1: Anchor freight partner LOI</li>
+          <li>Y2: Series A (NRR ≥110%, ARR ≥€1.24M)</li>
+          <li>Y3: Vitamins live, EBITDA inflects</li>
+          <li>Y4: EBITDA positive (€2.46M / 16%)</li>
+        </ul>
+      </div>`
+  },
+  whynow: {
+    label: 'Why Now · Channels',
+    title: 'Converging Mandates + Pre-Existing Structural Demand',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title red">Pre-existing Problem (Always Urgent)</div>
+        <ul class="modal-ul">
+          <li>Cross-border food documentation failures cause border rejections independent of any new regulation. The core market exists today and would exist without EUDR, FSMA 204 or Farm to Fork.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">EU/EEA Farm to Fork (2026–2027)</div>
+        <ul class="modal-ul">
+          <li>Imports must meet EU-equivalent digital traceability and sustainability documentation standards. VeriPura is the importer-side attestation layer converting this obligation into border-ready documentation.</li>
+          <li>Packaging Waste Regulation 2025/40: documentary compliance layer from Aug 2026 for non-EU packaged food suppliers.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">EUDR — Deforestation Regulation</div>
+        <ul class="modal-ul">
+          <li>Enforcement: 30 Dec 2026 (large/medium operators); 30 Jun 2027 (SMEs). DDS required via TRACES before EU/EEA entry.</li>
+          <li>Country risk benchmarking active — standard and high-risk (low-CPI) corridors face intensified border checks.</li>
+          <li>Covers: cocoa, coffee, soy, palm oil, beef, rubber, timber and derived products.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">US FDA FSMA 204</div>
+        <ul class="modal-ul">
+          <li>Requirements legally in force; enforcement extended to Jul 2028. Preparation obligations active now.</li>
+          <li>Dual EU/US compliance accounts = highest-ARPA segment.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">EU–Mercosur Agreement</div>
+        <ul class="modal-ul">
+          <li>Signed Asunción, 17 Jan 2026. Council greenlit 9 Jan 2026. Ratification pending (ECJ referral may delay 2 yrs). Interim Trade Agreement applies provisionally.</li>
+          <li>Amplifies regulated import volumes from Brazil, Argentina, Paraguay, Uruguay — all commodities subject to EUDR attestation. Immediate demand for VeriPura compliance layer.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Channels</div>
+        <ul class="modal-ul">
+          <li><strong>Freight Partner Channel (primary):</strong> anchor forwarder introduces VeriPura to 300+ importer clients; partner earns 20%→10% revenue share Y1→Y5.</li>
+          <li><strong>Direct Sales (secondary):</strong> 2 AE hires Y1; EU trade shows, EUIPO, regulatory compliance events; 28 direct clients Y1.</li>
+          <li><strong>Regulatory Tailwind (inbound):</strong> EUDR + FSMA 204 + Farm to Fork deadlines drive inbound from importers searching for solutions.</li>
+          <li><strong>Founder network:</strong> Onno's 18yr EU importer relationships → warm pipeline Y1.</li>
+          <li><strong>IOTA Foundation co-marketing</strong> for blockchain attestation credibility.</li>
+          <li><strong>IOTA TWIN pilot corridor (Brazil–UK beef):</strong> enterprise blockchain validation signal.</li>
+        </ul>
+      </div>`
+  },
+  cost: {
+    label: 'Cost Structure',
+    title: '€750K Seed — Use of Funds',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Year 1 Cost Drivers</div>
+        <ul class="modal-ul">
+          <li>AI Agent Architecture + IOTA Integration: <strong>€200K</strong> (largest single item)</li>
+          <li>Cloud Infrastructure (GCP) + SOC2 audit: <strong>€50K</strong></li>
+          <li>IOTA Node + Vitamins Module (future): <strong>€45K</strong></li>
+          <li>Key Hires — CTO (12-mo partial), CFO/Controller, CEO draw: <strong>€180K</strong></li>
+          <li>Go-To-Market (EU + US launch, freight partner BD): <strong>€125K</strong></li>
+          <li>Regulatory/Legal (EU entity, GDPR, IP): <strong>€55K</strong></li>
+          <li>Operations + Contingency (13%): <strong>€95K</strong></li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Ongoing Unit Economics</div>
+        <ul class="modal-ul">
+          <li>Blended COGS: 29%→21% of Net Revenue Y1→Y5 (declining)</li>
+          <li>Monthly burn: €46K (Y1) · €55K (Y2) · Profitable from Y4</li>
+          <li>CAC: Partner €1,200 · Direct €9,500</li>
+        </ul>
+      </div>`
+  },
+  revenue: {
+    label: 'Revenue Streams',
+    title: 'Subscription + Per-Shipment Attestation',
+    body: `
+      <div class="modal-block">
+        <div class="modal-block-title">Two Interlocking Streams</div>
+        <ul class="modal-ul">
+          <li><strong>Compliance Subscription:</strong> €199–€899/month (Importer / Pro / Enterprise) — ~80% of revenue. Recurring, predictable.</li>
+          <li><strong>Per-Shipment Attestation:</strong> €15–€280/shipment (Std / Complex / Pharma) — ~20% of revenue. Scales with volume.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Channel Economics</div>
+        <ul class="modal-ul">
+          <li>Freight partner revenue share: 20%→10% ramp Y1→Y5. VeriPura retains 80%→90%.</li>
+          <li>ACV: €9.9K (Y1) → €12.7K (Y5) — pricing power confirmed as platform value compounds.</li>
+        </ul>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Investor Returns (Y5 Exit)</div>
+        <table class="data-table">
+          <thead><tr><th>Scenario</th><th>Multiple</th><th>Enterprise Value</th><th>MOIC (€750K)</th></tr></thead>
+          <tbody>
+            <tr><td>Bear</td><td class="num">8×</td><td class="num">€265M</td><td class="num">26.5×</td></tr>
+            <tr><td>Base</td><td class="num">12×</td><td class="num">€398M</td><td class="num">39.8×</td></tr>
+            <tr><td>Bull</td><td class="num">18×</td><td class="num">€597M</td><td class="num pos">59.7×</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-block">
+        <div class="modal-block-title">Future Optionality</div>
+        <ul class="modal-ul">
+          <li><strong>VeriLiquid trade finance layer:</strong> invoice financing against verified on-chain attestation history — TAM expansion without requiring new customers. Signal for Series A narrative.</li>
+        </ul>
+      </div>`
+  }
+};
+
+// ── MODAL LOGIC ─────────────────────────────────────────────────────────────
+function openModal(key) {
+  const d = MODALS[key];
+  document.getElementById('modalLabel').textContent = d.label;
+  document.getElementById('modalTitle').textContent = d.title;
+  document.getElementById('modalBody').innerHTML = d.body;
+  document.getElementById('modalBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalBackdrop')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── CPI HEAT MAP DATA ───────────────────────────────────────────────────────
+const CPI_DATA = [
+  { country: 'Thailand',    score: 35, region: 'SEA' },
+  { country: 'Vietnam',     score: 40, region: 'SEA' },
+  { country: 'Indonesia',   score: 34, region: 'SEA' },
+  { country: 'India',       score: 39, region: 'SA'  },
+  { country: 'Bangladesh',  score: 24, region: 'SA'  },
+  { country: 'Pakistan',    score: 29, region: 'SA'  },
+  { country: 'Brazil',      score: 36, region: 'LAM' },
+  { country: 'Argentina',   score: 37, region: 'LAM' },
+  { country: 'Paraguay',    score: 27, region: 'LAM' },
+  { country: 'Uruguay',     score: 73, region: 'LAM' },
+  { country: 'Nigeria',     score: 26, region: 'AFR' },
+  { country: 'Ghana',       score: 43, region: 'AFR' },
+  { country: 'Kenya',       score: 31, region: 'AFR' },
+  { country: 'Morocco',     score: 38, region: 'AFR' },
+  { country: 'Egypt',       score: 35, region: 'MENA'},
+  { country: 'China',       score: 42, region: 'EA'  },
+  { country: 'Philippines', score: 33, region: 'SEA' },
+];
+
+function cpiColor(score) {
+  // low score = more red, high score = more blue/green
+  if (score < 30) return '#8B1A1A';
+  if (score < 35) return '#C0392B';
+  if (score < 40) return '#D4524A';
+  if (score < 45) return '#D4834A';
+  return '#2E7D52';
+}
+
+const heatmap = document.getElementById('heatmap');
+CPI_DATA.forEach(d => {
+  const div = document.createElement('div');
+  div.className = 'heatmap-item';
+  div.style.background = cpiColor(d.score);
+  const pct = Math.round((d.score / 100) * 80);
+  div.innerHTML = `
+    <div class="heatmap-country">${d.country}</div>
+    <div class="heatmap-score">${d.score}</div>
+    <div class="heatmap-label">CPI Score · ${d.region}</div>
+    <div class="heatmap-bar" style="width:${pct}%"></div>`;
+  heatmap.appendChild(div);
+});
+</script>
+</body>
+</html>
