@@ -689,6 +689,61 @@
     .proceeds-bar-note  { padding-left: 0; }
   }
 
+
+  /* ── TRACTION ────────────────────────────────────────────────────── */
+  .traction-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .traction-card {
+    border-radius: 8px; padding: 1.2rem 1.3rem;
+    border: 1.5px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.05);
+  }
+  .traction-card--done {
+    border-color: rgba(212,168,71,.3);
+    background: rgba(212,168,71,.06);
+  }
+  .traction-card--active {
+    border-color: rgba(74,128,196,.35);
+    background: rgba(74,128,196,.07);
+  }
+  .traction-status {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .traction-card--done   .traction-status { color: var(--gold); }
+  .traction-card--active .traction-status { color: var(--blue-lt); }
+  .traction-title {
+    font-family: var(--font-serif); font-size: 1rem;
+    color: var(--white); margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .traction-desc {
+    font-size: 0.78rem; color: var(--sky); line-height: 1.55;
+  }
+  .traction-honest {
+    border: 1px solid rgba(212,168,71,.3);
+    border-radius: 8px; padding: 1.1rem 1.4rem;
+    background: rgba(212,168,71,.06);
+  }
+  .traction-honest-inner {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+  }
+  .traction-honest-icon {
+    color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem;
+  }
+  .traction-honest-inner p {
+    font-size: 0.84rem; color: var(--sky); line-height: 1.6;
+    font-style: italic;
+  }
+
+  @media (max-width: 900px) {
+    .traction-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .traction-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── PRINT ────────────────────────────────────────────────────────── */
   @media print {
     .site-header, #cta, footer, .btn-pdf, .canvas-cell::after { display: none !important; }
@@ -747,6 +802,7 @@
     <a href="#market">Market</a>
     <a href="#corridors">Corridors</a>
     <a href="#charts">Financials</a>
+    <a href="#traction">Traction</a>
     <a href="#competitive">Competition</a>
     <a href="#founders">Team</a>
     <a href="#proceeds">Proceeds</a>
@@ -1021,6 +1077,64 @@
   </div>
 </section>
 
+
+
+<!-- ── TRACTION ───────────────────────────────────────────────────────────── -->
+<section class="section" id="traction" style="background: var(--navy);">
+  <div class="section-inner">
+    <h2 class="section-title" style="color: var(--white);">Traction <span style="color: var(--gold);">&amp; Status</span></h2>
+    <p class="section-desc" style="color: var(--sky);">Pre-revenue. Pre-contract. The platform is built, the pipeline is real, and the regulatory mandate is live.</p>
+    <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%);">
+
+    <div class="traction-grid">
+
+      <div class="traction-card traction-card--done">
+        <div class="traction-status">✓ Complete</div>
+        <div class="traction-title">Working Prototype</div>
+        <p class="traction-desc">Live compliance agent demo operational. Screen recording available for async investor review. Core 9-stage workflow — Intake through Ledger — fully demonstrated.</p>
+      </div>
+
+      <div class="traction-card traction-card--done">
+        <div class="traction-status">✓ Complete</div>
+        <div class="traction-title">Financial Model</div>
+        <p class="traction-desc">Institutional-grade 5-year model (v5) — fully auditable with primary source data. Available in the data room on request.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">IOTA Foundation Engagement</div>
+        <p class="traction-desc">Blockchain attestation layer integration underway with IOTA Foundation. Technical alignment confirmed on document notarisation and verifiable credentials approach.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">IOTA TWIN Pilot Corridor</div>
+        <p class="traction-desc">Brazil–UK beef corridor in active exploration as a pilot use case with IOTA TWIN infrastructure. Technical demo prepared for TWIN engineering team.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">Freight Partner Pipeline</div>
+        <p class="traction-desc">Conversations underway with EU-based freight forwarders. Anchor partner LOI targeted Q2 2026. Partner channel is the primary go-to-market lever.</p>
+      </div>
+
+      <div class="traction-card traction-card--active">
+        <div class="traction-status">→ Active</div>
+        <div class="traction-title">Importer Pilot Candidates</div>
+        <p class="traction-desc">First EU food importer pilot candidates identified through founder network. Outreach underway targeting Dutch and Italian SME importers sourcing from high-risk corridors.</p>
+      </div>
+
+    </div>
+
+    <div class="traction-honest">
+      <div class="traction-honest-inner">
+        <span class="traction-honest-icon">◈</span>
+        <p>This is a raise to sign the first anchor freight partner and close the first 28 clients. Seed proceeds fund the 18-month sprint to Series A readiness at €1.24M ARR.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- ── COMPETITIVE ───────────────────────────────────────────────────────── -->
 <section class="section" id="competitive" style="background: var(--white);">
