@@ -55,7 +55,7 @@
     letter-spacing: 0.02em;
   }
   .site-header .logo span { color: var(--gold); }
-  .site-header nav { display: flex; gap: 1.5rem; align-items: center; }
+  .site-header nav { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
   .site-header nav a {
     font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--sky);
@@ -434,6 +434,35 @@
     .charts-grid, .founders-grid { grid-template-columns: 1fr; }
     .site-header { padding: 0 1.2rem; }
     .hero, .section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    #corridors.section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .heatmap-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+  }
+
+  @media (max-width: 600px) {
+    .canvas-grid { grid-template-columns: 1fr; }
+    .cell-problem, .cell-solution, .cell-uvp, .cell-advantage,
+    .cell-segments, .cell-altmetrics, .cell-metrics,
+    .cell-cost, .cell-revenue { grid-column: auto !important; grid-row: auto !important; }
+    .hero-kpis { gap: 0.8rem; }
+    .kpi { min-width: 120px; flex: 1 1 calc(50% - 0.8rem); }
+    .kpi-val { font-size: 1.2rem; }
+    .site-header nav { gap: 0.7rem; }
+    .site-header nav a { font-size: 0.68rem; letter-spacing: 0.05em; }
+    .site-header .logo { font-size: 1.1rem; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero-sub { font-size: 0.9rem; }
+    .section-title { font-size: 1.4rem; }
+    .founders-grid { grid-template-columns: 1fr; }
+    .modal { margin: 0.5rem; max-height: 92vh; }
+    .modal-backdrop { padding: 0.5rem; }
+    .data-table { font-size: 0.72rem; }
+    .data-table th, .data-table td { padding: 0.35rem 0.4rem; }
+    .heatmap-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }
+    #cta { padding: 2.5rem 1.2rem; }
+    #cta h2 { font-size: 1.5rem; }
+    footer { padding: 1rem 1.2rem; flex-direction: column; gap: 0.3rem; }
+    .chart-card { padding: 1rem; }
+    .charts-grid { gap: 1rem; }
   }
 </style>
 </head>
@@ -444,10 +473,10 @@
   <div class="logo">Veri<span>Pura</span></div>
   <nav>
     <a href="#canvas">Canvas</a>
+    <a href="#corridors">Corridors</a>
     <a href="#charts">Financials</a>
     <a href="#founders">Team</a>
     <a href="#cta">Contact</a>
-    <button class="btn-pdf" onclick="window.print()">↓ Print / PDF</button>
   </nav>
 </header>
 
@@ -460,9 +489,8 @@
     <div class="hero-kpis">
       <div class="kpi"><span class="kpi-val accent">€750K</span><span class="kpi-lbl">SAFE · €3.75M Cap</span></div>
       <div class="kpi"><span class="kpi-val">€33.2M</span><span class="kpi-lbl">Y5 Net Revenue</span></div>
-      <div class="kpi"><span class="kpi-val">110–118%</span><span class="kpi-lbl">Net Revenue Retention</span></div>
       <div class="kpi"><span class="kpi-val accent">26–60×</span><span class="kpi-lbl">Investor MOIC (Bear–Bull)</span></div>
-      <div class="kpi"><span class="kpi-val">€170B+</span><span class="kpi-lbl">EU Food Import SAM</span></div>
+      <div class="kpi"><span class="kpi-val">€340B+</span><span class="kpi-lbl">EU + USA Food Import SAM</span></div>
     </div>
   </div>
 </section>
@@ -561,6 +589,21 @@
   </div>
 </section>
 
+
+<!-- ── CORRIDORS ──────────────────────────────────────────────────────────── -->
+<section class="section" id="corridors" style="background: var(--navy);">
+  <div class="section-inner">
+    <h2 class="section-title" style="color: var(--white);">Where We Operate — <span style="color: var(--gold);">High-Risk Import Corridors</span></h2>
+    <p class="section-desc" style="color: var(--sky); margin-bottom: 0.6rem;">VeriPura targets food importers sourcing from origin countries with low Corruption Perceptions Index (CPI) scores — where document authenticity and regulatory enforcement are structurally unreliable. Lower CPI scores indicate higher institutional integrity risk and greater exposure to documentation fraud, misrepresentation and compliance failure.</p>
+    <p style="font-size: 0.8rem; color: rgba(214,228,240,0.6); margin-bottom: 2rem;">Source: Transparency International CPI 2024 · Scale 0 (highly corrupt) → 100 (very clean)</p>
+    <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%);">
+    <div class="heatmap-grid" id="heatmap"></div>
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <a href="https://thomasoberlin.github.io/VP-Trust-what-you-eat/" target="_blank" rel="noopener" style="font-size: 0.85rem; color: var(--gold); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid rgba(212,168,71,0.4); padding: 0.55rem 1.2rem; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='rgba(212,168,71,0.1)'" onmouseout="this.style.background='transparent'">Explore the full corridor analysis →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── CHARTS ─────────────────────────────────────────────────────────────── -->
 <section class="section" id="charts">
   <div class="section-inner">
@@ -616,13 +659,6 @@
         </svg>
       </div>
 
-      <!-- CPI heat map -->
-      <div class="chart-card">
-        <div class="chart-card-title">CPI Corridor Heat Map</div>
-        <div class="chart-card-sub">Origin countries by Corruption Perceptions Index score (0=highly corrupt, 100=very clean) · Transparency International 2024</div>
-        <div class="heatmap-grid" id="heatmap"></div>
-      </div>
-
     </div>
 
     <!-- financial table -->
@@ -664,14 +700,14 @@
         <div class="founder-name">Onno Stienen</div>
         <div class="founder-role">Co-Founder &amp; CEO</div>
         <p class="founder-bio">18+ years operating in food export and import compliance across Southeast Asia and the EU, including direct experience with Thai and Vietnamese supply chains (Bangkok-based food ops, onoff spices). EU food import compliance expert with an active regulatory network across the Netherlands, Belgium and key import hubs. The regulatory knowledge encoded in VeriPura's compliance engine is his institutional expertise.</p>
-        <a class="founder-email" href="mailto:onno@veripura.com">onno@veripura.com</a>
+        <a class="founder-email" href="/cdn-cgi/l/email-protection#5639383839162033243f262324377835393b"><span class="__cf_email__" data-cfemail="d9b6b7b7b699afbcabb0a9acabb8f7bab6b4">[email&#160;protected]</span></a>
       </div>
       <div class="founder-card">
         <div class="founder-initial">TO</div>
         <div class="founder-name">Thomas Oberlin</div>
         <div class="founder-role">Co-Founder &amp; COO</div>
         <p class="founder-bio">Serial entrepreneur with €14M raised across prior ventures including SmartCube and MightyGreens. Grew up on a dairy farm and worked in food processing — a firsthand understanding of the supply chain problems VeriPura solves. Italy-based with deep EU investor relationships and a direct sales background in complex B2B environments. Leads fundraising, partnerships and go-to-market.</p>
-        <a class="founder-email" href="mailto:thomas@veripura.com">thomas@veripura.com</a>
+        <a class="founder-email" href="/cdn-cgi/l/email-protection#394d515654584a794f5c4b50494c4b58175a5654"><span class="__cf_email__" data-cfemail="47332f282a2634073122352e373235266924282a">[email&#160;protected]</span></a>
       </div>
     </div>
   </div>
@@ -682,8 +718,7 @@
   <h2>Request the Data Room</h2>
   <p>Full SAFE documents, financial model and investor materials available on request.</p>
   <div class="cta-buttons">
-    <a class="btn-primary" href="mailto:onno@veripura.com?cc=thomas@veripura.com&subject=VeriPura%20Seed%20-%20Data%20Room%20Request">Request Data Room</a>
-    <a class="btn-secondary" href="mailto:onno@veripura.com?cc=thomas@veripura.com&subject=VeriPura%20Seed%20-%20Investor%20Inquiry">Get in Touch</a>
+    <a class="btn-primary" href="mailto:thomas@veripura.com?subject=VeriPura%20%E2%80%94%20I%20Want%20to%20Know%20More&body=Hi%20Thomas%2C%0A%0AI%20came%20across%20VeriPura%20and%20would%20like%20to%20learn%20more.">I WANT TO KNOW MORE</a>
   </div>
 </section>
 
@@ -707,7 +742,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── MODAL DATA ──────────────────────────────────────────────────────────────
 const MODALS = {
   problem: {
@@ -1025,7 +1060,6 @@ const CPI_DATA = [
   { country: 'Brazil',      score: 36, region: 'LAM' },
   { country: 'Argentina',   score: 37, region: 'LAM' },
   { country: 'Paraguay',    score: 27, region: 'LAM' },
-  { country: 'Uruguay',     score: 73, region: 'LAM' },
   { country: 'Nigeria',     score: 26, region: 'AFR' },
   { country: 'Ghana',       score: 43, region: 'AFR' },
   { country: 'Kenya',       score: 31, region: 'AFR' },
@@ -1040,23 +1074,4 @@ function cpiColor(score) {
   if (score < 30) return '#8B1A1A';
   if (score < 35) return '#C0392B';
   if (score < 40) return '#D4524A';
-  if (score < 45) return '#D4834A';
-  return '#2E7D52';
-}
-
-const heatmap = document.getElementById('heatmap');
-CPI_DATA.forEach(d => {
-  const div = document.createElement('div');
-  div.className = 'heatmap-item';
-  div.style.background = cpiColor(d.score);
-  const pct = Math.round((d.score / 100) * 80);
-  div.innerHTML = `
-    <div class="heatmap-country">${d.country}</div>
-    <div class="heatmap-score">${d.score}</div>
-    <div class="heatmap-label">CPI Score · ${d.region}</div>
-    <div class="heatmap-bar" style="width:${pct}%"></div>`;
-  heatmap.appendChild(div);
-});
-</script>
-</body>
-</html>
+  if 
