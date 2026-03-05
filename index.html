@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VeriPura — Lean Canvas · Seed Stage · CONFIDENTIAL</title>
+<title>VeriPura · Seed Stage · CONFIDENTIAL · March 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1110,6 +1110,43 @@
     .solution-path-steps { flex-direction: column; align-items: flex-start; }
   }
 
+
+  /* ── SMALL TEXT WEIGHT ───────────────────────────────────────────── */
+  .heatmap-label, .heatmap-foods, .safe-label, .safe-note, .safe-disclaimer,
+  .market-tam-label, .market-tam-desc, .market-reg-date, .market-reg-desc,
+  .comp-tag, .comp-desc, .comp-verdict, .comp-exit-sector,
+  .traction-status, .traction-desc,
+  .fin-kpi-lbl, .runway-legend, .calc-disclaimer, .calc-min-note,
+  .milestone-text, .proceeds-bar-note, .proceeds-pct,
+  .whynow-date, .whynow-desc, .problem-desc, .problem-sq-text,
+  .solution-layer-desc, .solution-path-year,
+  .founder-bio, .founders-why p, .whynow-insight p,
+  .gap-note, .gap-points, .comp-moat-desc,
+  .section-desc, .chart-card-sub, .data-table td,
+  .modal-ul li, .modal-block p { font-weight: 500; }
+
+  .heatmap-label, .safe-label, .market-tam-label, .market-reg-date,
+  .comp-tag, .traction-status, .fin-kpi-lbl, .calc-label,
+  .milestone-year, .proceeds-bar-label, .whynow-status,
+  .solution-path-label, .comp-exit-sector,
+  .gap-side-title, .gap-points { font-weight: 600; }
+
+  /* ── FOOTER SOCIAL ───────────────────────────────────────────────── */
+  footer { text-align: center; padding: 2rem 1rem; background: var(--navy); }
+  footer .footer-main { color: rgba(214,228,240,0.6); font-size: 0.8rem; font-weight:600; margin-bottom: 0.3rem; }
+  footer .footer-web a { color: var(--sky); font-size: 0.8rem; text-decoration: none; font-weight:500; }
+  footer .footer-web a:hover { color: var(--gold); }
+  .footer-social {
+    display: flex; justify-content: center; align-items: center;
+    gap: 1.2rem; margin-top: 0.8rem;
+  }
+  .footer-social-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: rgba(214,228,240,0.5); font-size: 0.78rem; font-weight:600;
+    text-decoration: none; transition: color .15s;
+  }
+  .footer-social-link:hover { color: var(--gold); }
+
   /* ── PRINT ────────────────────────────────────────────────────────── */
   @media print {
     .site-header, #cta, footer, .btn-pdf, .canvas-cell::after { display: none !important; }
@@ -1162,13 +1199,12 @@
 
 <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
 <header class="site-header">
-  <div class="logo">Veri<span>Pura</span></div>
+  <a href="#" class="logo" style="text-decoration:none;">Veri<span>Pura</span></a>
   <nav>
     <a href="#problem">Problem</a>
     <a href="#solution">Solution</a>
     <a href="#whynow">Why Now</a>
     <a href="#market">Market</a>
-    <a href="#corridors">Corridors</a>
     <a href="#canvas">Model</a>
     <a href="#competitive">Competition</a>
     <a href="#traction">Traction</a>
@@ -1183,7 +1219,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Confidential · Seed Stage · March 2026</div>
-    <h1>AI-Powered Compliance for<br><em>Regulated Food Imports</em></h1>
+    <h1>Agentic Compliance for<br><em>Regulated Food Imports</em></h1>
     <p class="hero-sub">Preventing border rejections before a shipment leaves the country of origin — automatically, immutably, at scale.</p>
     <div class="hero-kpis">
       <div class="kpi"><span class="kpi-val accent">€750K</span><span class="kpi-lbl">SAFE · €3.75M Cap</span></div>
@@ -1239,7 +1275,7 @@
         </div>
         <div class="problem-sq-item">
           <div class="problem-sq-icon">⚠</div>
-          <div class="problem-sq-text">No AI-native, blockchain-attested platform exists at this intersection — the market is entirely unserved</div>
+          <div class="problem-sq-text">No agent-native, blockchain-attested platform exists at this intersection — the market is entirely unserved</div>
         </div>
       </div>
     </div>
@@ -1250,7 +1286,7 @@
 <section class="section" id="solution" style="background: var(--navy);">
   <div class="section-inner">
     <h2 class="section-title" style="color:var(--white);">The <span style="color:var(--gold);">Solution</span></h2>
-    <p class="section-desc" style="color:var(--sky);">VeriPura is the AI + blockchain compliance platform that prevents food shipments from being rejected at EU and US borders. Three layers that work together.</p>
+    <p class="section-desc" style="color:var(--sky);">VeriPura is the agentic compliance platform with blockchain attestation that prevents food shipments from being rejected at EU and US borders. Three layers that work together.</p>
     <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%);">
 
     <div class="solution-layers">
@@ -1258,7 +1294,7 @@
       <div class="solution-layer">
         <div class="solution-layer-num">01</div>
         <div class="solution-layer-body">
-          <div class="solution-layer-title">AI Agents</div>
+          <div class="solution-layer-title">Agentic Workflows</div>
           <p class="solution-layer-desc">Collect and validate supplier certificates, cross-check EU and US regulatory requirements, and auto-generate corrected documentation — before the shipment leaves the country of origin. Problems are fixed at source, not at the border.</p>
         </div>
       </div>
@@ -1274,8 +1310,8 @@
       <div class="solution-layer">
         <div class="solution-layer-num">03</div>
         <div class="solution-layer-body">
-          <div class="solution-layer-title">Freight Partner Channel</div>
-          <p class="solution-layer-desc">The platform is embedded into freight forwarder workflows. Forwarders already touch every shipment — they have the client relationships and are incentivised to reduce their own liability exposure. VeriPura makes the forwarder look good to their client. The forwarder becomes a distribution arm, not a competitor. CAC advantage: €1,200 partner vs €9,500 direct.</p>
+          <div class="solution-layer-title">Reaching Importers at Scale</div>
+          <p class="solution-layer-desc">VeriPura goes to market through two complementary channels. We sell directly to upper-mid and enterprise importers — companies with the compliance burden, the shipment volumes and the budget to justify a direct relationship. In parallel, freight forwarders serve as channel partners who extend our reach into the SME importer segment. Forwarders already touch every shipment, carry the client relationships, and are motivated to reduce their own liability exposure. Critically, each new forwarder partner instantly opens a new geography or market segment — making the channel our primary expansion engine, not just a distribution tactic. CAC: €1,200 via channel vs €9,500 direct.</p>
         </div>
       </div>
 
@@ -1308,7 +1344,7 @@
 <section class="section" id="whynow" style="background: var(--white);">
   <div class="section-inner">
     <h2 class="section-title">Why <span>Now</span></h2>
-    <p class="section-desc">Three regulatory mandates converge in 2026. This is not a trend — it is a permanent step-up in the cost of cross-border food trade.</p>
+    <p class="section-desc">Regulatory mandates are converging in 2026. This is not a trend — it is a permanent step-up in the cost of cross-border food trade.</p>
     <hr class="divider">
     <div class="whynow-grid">
 
@@ -1374,12 +1410,12 @@
         <div class="market-tam-label">SOM</div>
         <div class="market-tam-value">2,610</div>
         <div class="market-tam-sub">5-Year Target Clients</div>
-        <div class="market-tam-desc">€33.2M net revenue at Y5 · ACV growing €9.9K→€12.7K · Freight partner flywheel compounds growth at near-zero incremental CAC</div>
+        <div class="market-tam-desc">€33.2M net revenue at Y5 · ACV growing €9.9K→€12.7K · Direct sales to enterprise importers + freight forwarder channel partners extending reach into SME segment — each new forwarder opens a new geography</div>
       </div>
     </div>
 
     <div class="market-regs">
-      <div class="market-reg-title">Three Converging Mandates — 2026</div>
+      <div class="market-reg-title">Converging Regulatory Mandates — 2026</div>
       <div class="market-regs-grid">
         <div class="market-reg-card">
           <div class="market-reg-name">EU Farm to Fork</div>
@@ -1404,15 +1440,10 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- ── CORRIDORS ──────────────────────────────────────────────────────────── -->
-<section class="section" id="corridors" style="background: var(--navy);">
-  <div class="section-inner">
-    <h2 class="section-title" style="color: var(--white);">Where We Operate — <span style="color: var(--gold);">High-Risk Import Corridors</span></h2>
-    <p class="section-desc" style="color: var(--sky); margin-bottom: 1.5rem;">VeriPura operates on any corridor where institutional integrity risk creates documentary compliance exposure. The Corruption Perceptions Index (CPI) is our proxy — the greater the gap between origin and receiving market, the greater the importer's liability.</p>
-    <hr class="divider" style="background: linear-gradient(90deg, var(--gold) 0%, rgba(212,168,71,0.2) 100%); margin-bottom: 1.8rem;">
+    <!-- Corridors panel embedded in Market -->
+    <div id="corridors" style="background:var(--navy); border-radius:12px; padding:2rem; margin-top:2rem;">
+      <h3 style="font-family:var(--font-serif); font-size:1.3rem; color:var(--white); margin-bottom:0.4rem;">Where We Operate — <span style="color:var(--gold);">High-Risk Import Corridors</span></h3>
+      <p style="font-size:0.85rem; color:var(--sky); margin-bottom:1.5rem; font-weight:500;">VeriPura operates on any corridor where institutional integrity risk creates documentary compliance exposure. The greater the CPI gap between origin and receiving market, the greater the importer's liability.</p>
 
     <!-- Compliance gap bar -->
     <div class="gap-bar">
@@ -1461,8 +1492,13 @@
     <div style="margin-top: 1.2rem; text-align: center;">
       <a href="https://thomasoberlin.github.io/VP-Trust-what-you-eat/" target="_blank" rel="noopener" style="font-size: 0.85rem; color: var(--gold); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid rgba(212,168,71,0.4); padding: 0.55rem 1.2rem; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='rgba(212,168,71,0.1)'" onmouseout="this.style.background='transparent'">Explore the full corridor analysis →</a>
     </div>
+  
+    </div>
+
   </div>
 </section>
+
+<!-- ── CANVAS ──────────────────────────────────────────────────────────── -->
 
 <!-- ── CANVAS ─────────────────────────────────────────────────────────────── -->
 <section class="section" id="canvas">
@@ -1491,7 +1527,7 @@
       <!-- SOLUTION -->
       <div class="canvas-cell cell-solution" onclick="openModal('solution')">
         <div class="cell-header"><span class="cell-icon">⚙</span> Solution</div>
-        <div class="cell-headline">AI Agents · Blockchain Attestation · Freight Partner Channel</div>
+        <div class="cell-headline">Agentic Workflows · Blockchain Attestation · Freight Partner Channel</div>
         <p class="cell-preview">Auto-validate, auto-correct, and immutably attest compliance documentation before departure from origin country.</p>
         <div class="cell-tags"><span class="tag">IOTA</span><span class="tag navy">Web3-native</span></div>
       </div>
@@ -1543,7 +1579,7 @@
       <div class="canvas-cell mid cell-cost" onclick="openModal('cost')">
         <div class="cell-header"><span class="cell-icon">💶</span> Cost Structure</div>
         <div class="cell-headline">€750K seed deployed across product, team, GTM</div>
-        <p class="cell-preview">AI Agent Architecture + IOTA: €200K · Cloud + SOC2: €50K · Key hires: €180K · GTM: €125K · Legal/Regulatory: €55K · Ops + contingency: €140K. Monthly burn: €46K (Y1) → €55K (Y2). COGS declining 29%→21% Y1→Y5.</p>
+        <p class="cell-preview">Agentic Workflow Architecture + IOTA: €200K · Cloud + SOC2: €50K · Key hires: €180K · GTM: €125K · Legal/Regulatory: €55K · Ops + contingency: €140K. Monthly burn: €46K (Y1) → €55K (Y2). COGS declining 29%→21% Y1→Y5.</p>
       </div>
 
       <!-- REVENUE STREAMS -->
@@ -1583,14 +1619,14 @@
       <div class="comp-card comp-card--weak">
         <div class="comp-name">Point Solutions</div>
         <div class="comp-tag comp-tag--amber">Partial</div>
-        <p class="comp-desc">Document management tools, traceability trackers. Address one compliance step. No end-to-end AI-native platform exists at this intersection.</p>
+        <p class="comp-desc">Document management tools, traceability trackers. Address one compliance step. No end-to-end agent-native platform exists at this intersection.</p>
         <div class="comp-verdict">❌ Single-step · ❌ No attestation · ❌ No channel</div>
       </div>
       <div class="comp-card comp-card--weak">
         <div class="comp-name">Web3 Infrastructure (OriginTrail, IBM Food Trust)</div>
         <div class="comp-tag comp-tag--amber">Adjacent</div>
         <p class="comp-desc">Infrastructure and provenance plays — not compliance automation. Require significant integration effort. Not designed for importer-side documentary compliance.</p>
-        <div class="comp-verdict">❌ Infrastructure · ❌ Not importer-side · ❌ No AI agents</div>
+        <div class="comp-verdict">❌ Infrastructure · ❌ Not importer-side · ❌ No agentic workflows</div>
       </div>
     </div>
 
@@ -1603,7 +1639,7 @@
         <div class="comp-moat">
           <div class="comp-moat-icon">✓</div>
           <div>
-            <div class="comp-moat-title">AI Agent Compliance</div>
+            <div class="comp-moat-title">Agentic Compliance</div>
             <div class="comp-moat-desc">Auto-validate, auto-correct documentation before departure from origin country</div>
           </div>
         </div>
@@ -1618,7 +1654,7 @@
           <div class="comp-moat-icon">✓</div>
           <div>
             <div class="comp-moat-title">Freight Partner Channel</div>
-            <div class="comp-moat-desc">6× CAC advantage — €1,200 partner vs €9,500 direct; structural distribution moat self-reinforces</div>
+            <div class="comp-moat-desc">Direct to enterprise + forwarder channel for SMEs — 6× CAC advantage (€1,200 vs €9,500 direct); each new forwarder partner opens a new geography or segment</div>
           </div>
         </div>
         <div class="comp-moat">
@@ -1641,7 +1677,7 @@
         </div>
         <div class="comp-exit-card">
           <div class="comp-exit-name">project44</div>
-          <div class="comp-exit-sector">AI supply chain visibility</div>
+          <div class="comp-exit-sector">agentic supply chain visibility</div>
           <div class="comp-exit-multiple">12–18× ARR</div>
         </div>
         <div class="comp-exit-card">
@@ -1760,7 +1796,7 @@
 <section class="section" id="charts" style="background: var(--cream);">
   <div class="section-inner">
     <h2 class="section-title">5-Year <span>Financial Snapshot</span></h2>
-    <p class="section-desc">Based on VeriPura_Financial_Model_v5.xlsx · All values in Euro (€) · Base case</p>
+    <p class="section-desc">All values in Euro (€) · Base case</p>
     <hr class="divider">
 
     <!-- Full-width annotated revenue chart -->
@@ -1936,7 +1972,7 @@
           </div>
         </div>
       </div>
-      <p class="calc-disclaimer">Illustrative only. Based on VeriPura_Financial_Model_v5.xlsx. Assumes full €750K raise, ~16.7% pre-seed ownership diluting to ~7.5% at exit after Series A and B. Returns not guaranteed.</p>
+      <p class="calc-disclaimer">Illustrative only. Assumes full €750K raise, ~16.7% pre-seed ownership diluting to ~7.5% at exit after Series A and B. Returns not guaranteed.</p>
     </div>
 
   </div>
@@ -1960,7 +1996,7 @@
           </div>
           <div class="proceeds-bar-amount">€295K <span class="proceeds-pct">39%</span></div>
         </div>
-        <div class="proceeds-bar-note">AI agent build · IOTA integration · Cloud infrastructure (GCP) · SOC2 audit</div>
+        <div class="proceeds-bar-note">agentic platform build · IOTA integration · Cloud infrastructure (GCP) · SOC2 audit</div>
 
         <div class="proceeds-bar-row">
           <div class="proceeds-bar-label">Key Hires</div>
@@ -1978,7 +2014,7 @@
           </div>
           <div class="proceeds-bar-amount">€125K <span class="proceeds-pct">17%</span></div>
         </div>
-        <div class="proceeds-bar-note">Freight partner BD · EU direct sales · FDA US market entry</div>
+        <div class="proceeds-bar-note">Direct enterprise sales (EU + US) · Freight forwarder channel partner BD · Market entry</div>
 
         <div class="proceeds-bar-row">
           <div class="proceeds-bar-label">Regulatory &amp; Legal</div>
@@ -2110,7 +2146,7 @@
           <span class="safe-moic-lbl">Bull MOIC (Y5)</span>
         </div>
       </div>
-      <p class="safe-disclaimer">Full SAFE document, financial model and cap table available in the data room. Returns based on VeriPura_Financial_Model_v5.xlsx · 8–18× revenue exit multiple at Y5.</p>
+      <p class="safe-disclaimer">Full SAFE document, financial model and cap table available in the data room. 8–18× revenue exit multiple at Y5.</p>
     </div>
 
   </div>
@@ -2118,17 +2154,31 @@
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────────── -->
 <section id="cta">
-  <h2>Request the Data Room</h2>
+  <h2>Ready to Learn More?</h2>
   <p>Full SAFE documents, financial model and investor materials available on request.</p>
   <div class="cta-buttons">
-    <a class="btn-primary" href="/cdn-cgi/l/email-protection#8df9e5e2e0ecfecdfbe8ffe4fdf8ffeca3eee2e0b2fef8efe7e8eef9b0dbe8ffe4ddf8ffeca8bfbda8c8bfa8b5bda8b4b9a8bfbdc4a8bfbddaece3f9a8bfbdf9e2a8bfbdc6e3e2faa8bfbdc0e2ffe8abefe2e9f4b0c5e4a8bfbdd9e5e2e0ecfea8bfcea8bdcca8bdccc4a8bfbdeeece0e8a8bfbdeceeffe2fefea8bfbddbe8ffe4ddf8ffeca8bfbdece3e9a8bfbdfae2f8e1e9a8bfbde1e4e6e8a8bfbdf9e2a8bfbde1e8ecffe3a8bfbde0e2ffe8a3">I WANT TO KNOW MORE</a>
+    <a class="btn-primary" href="https://calendar.app.google/55nDD9uVYhtSWYWJ6" target="_blank" rel="noopener">Schedule a Conversation</a>
   </div>
 </section>
 
 <!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
 <footer>
-  <p>VeriPura · CONFIDENTIAL · March 2026 · Based on VeriPura_Financial_Model_v5.xlsx · Lean Canvas framework by Ash Maurya (leanstack.com)</p>
-  <p>www.veripura.com</p>
+  <p class="footer-main">VeriPura · CONFIDENTIAL · March 2026</p>
+  <p class="footer-web"><a href="https://www.veripura.com" target="_blank" rel="noopener">www.veripura.com</a></p>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/veripura/" target="_blank" rel="noopener" class="footer-social-link" title="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://x.com/VeriPura" target="_blank" rel="noopener" class="footer-social-link" title="X">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X
+    </a>
+    <a href="https://t.me/VeriPura" target="_blank" rel="noopener" class="footer-social-link" title="Telegram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      Telegram
+    </a>
+  </div>
 </footer>
 
 <!-- ── MODAL ───────────────────────────────────────────────────────────────── -->
@@ -2174,14 +2224,14 @@ const MODALS = {
         <ul class="modal-ul">
           <li>Manual process via email/PDF/consultants — slow, error-prone, unscalable</li>
           <li>ERP compliance modules (SAP/Oracle) — built for manufacturers; 18-month deployments; not designed for importers</li>
-          <li>Point solutions — address one compliance step; no end-to-end AI-native platform exists</li>
+          <li>Point solutions — address one compliance step; no end-to-end agent-native platform exists</li>
           <li>No Web3-native attestation platform exists for this use case</li>
         </ul>
       </div>`
   },
   solution: {
     label: 'Solution',
-    title: 'AI Agents · Blockchain Attestation · Freight Partner Channel',
+    title: 'Agentic Workflows · Blockchain Attestation · Freight Partner Channel',
     body: `
       <div class="modal-block">
         <div class="modal-block-title">Top 3 Features</div>
@@ -2379,7 +2429,7 @@ const MODALS = {
       <div class="modal-block">
         <div class="modal-block-title">Year 1 Cost Drivers</div>
         <ul class="modal-ul">
-          <li>AI Agent Architecture + IOTA Integration: <strong>€200K</strong> (largest single item)</li>
+          <li>Agentic Workflow Architecture + IOTA Integration: <strong>€200K</strong> (largest single item)</li>
           <li>Cloud Infrastructure (GCP) + SOC2 audit: <strong>€50K</strong></li>
           <li>IOTA Node + Vitamins Module (future): <strong>€45K</strong></li>
           <li>Key Hires — CTO (12-mo partial), CFO/Controller, CEO draw: <strong>€180K</strong></li>
