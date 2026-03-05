@@ -1147,6 +1147,53 @@
   }
   .footer-social-link:hover { color: var(--gold); }
 
+
+  /* ── METRICS NARRATIVE GRID ──────────────────────────────────────── */
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; margin: 1.5rem 0;
+  }
+  .metrics-cell {
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 1.2rem;
+    border-top: 3px solid var(--blue);
+  }
+  .metrics-cell--gold { border-top-color: var(--gold); }
+  .metrics-cell--green { border-top-color: #2E7D52; }
+  .metrics-cell--red { border-top-color: #C0392B; }
+  .metrics-cell-title {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 0.9rem;
+  }
+  .metrics-cell--gold .metrics-cell-title { color: #9A7420; }
+  .metrics-cell--green .metrics-cell-title { color: #2E7D52; }
+  .metrics-cell--red .metrics-cell-title { color: #C0392B; }
+  .metrics-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.35rem 0; border-bottom: 1px solid var(--border);
+  }
+  .metrics-row:last-child { border-bottom: none; }
+  .metrics-row-label {
+    font-size: 0.76rem; color: var(--muted); font-weight: 500; line-height: 1.3;
+  }
+  .metrics-row-val {
+    font-family: var(--font-mono); font-size: 0.82rem;
+    color: var(--navy); font-weight: 600; white-space: nowrap; margin-left: 0.5rem;
+  }
+  .metrics-row-val--gold { color: #9A7420; }
+  .metrics-row-val--green { color: #2E7D52; }
+  .metrics-note {
+    font-size: 0.72rem; color: var(--muted); font-weight: 500;
+    font-style: italic; margin-top: 0.7rem; line-height: 1.45;
+    border-top: 1px solid var(--border); padding-top: 0.5rem;
+  }
+  @media (max-width: 900px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── PRINT ────────────────────────────────────────────────────────── */
   @media print {
     .site-header, #cta, footer, .btn-pdf, .canvas-cell::after { display: none !important; }
@@ -1886,6 +1933,104 @@
         <div class="fin-kpi-val">€46K</div>
         <div class="fin-kpi-lbl">Monthly Burn Y1</div>
       </div>
+    </div>
+
+
+    <!-- Investor metrics narrative grid -->
+    <div class="metrics-grid">
+
+      <div class="metrics-cell">
+        <div class="metrics-cell-title">Revenue Quality</div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Net Revenue Retention</span>
+          <span class="metrics-row-val">110–118%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Gross Revenue Retention</span>
+          <span class="metrics-row-val">93–96%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Logo Churn (Y5→Y1)</span>
+          <span class="metrics-row-val">3–6%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Client Growth Y1→Y5</span>
+          <span class="metrics-row-val">21→2,610</span>
+        </div>
+        <div class="metrics-note">NRR above 110% means existing clients expand faster than any churn — the base grows without new sales.</div>
+      </div>
+
+      <div class="metrics-cell metrics-cell--gold">
+        <div class="metrics-cell-title">Unit Economics</div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Blended CAC (Y3)</span>
+          <span class="metrics-row-val metrics-row-val--gold">€2,040</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Channel CAC</span>
+          <span class="metrics-row-val metrics-row-val--gold">€1,200</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Direct CAC</span>
+          <span class="metrics-row-val metrics-row-val--gold">€9,500</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">LTV : CAC (Y3)</span>
+          <span class="metrics-row-val metrics-row-val--gold">135×</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">CAC Payback (Y3)</span>
+          <span class="metrics-row-val metrics-row-val--gold">2.1 mo</span>
+        </div>
+        <div class="metrics-note">Channel economics drive the blended CAC down. Each new freight partner opens a geography at €1,200 vs €9,500 direct.</div>
+      </div>
+
+      <div class="metrics-cell metrics-cell--green">
+        <div class="metrics-cell-title">Efficiency</div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Magic Number (Y2)</span>
+          <span class="metrics-row-val metrics-row-val--green">16.5×</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Burn Multiple (Y2)</span>
+          <span class="metrics-row-val metrics-row-val--green">0.64×</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">ARR per FTE (Y3)</span>
+          <span class="metrics-row-val metrics-row-val--green">€226K</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">YoY Revenue Growth</span>
+          <span class="metrics-row-val metrics-row-val--green">+495%→+189%</span>
+        </div>
+        <div class="metrics-note">Magic Number and Burn Multiple reflect freight partner channel efficiency. Direct sales efficiency is modelled separately.</div>
+      </div>
+
+      <div class="metrics-cell metrics-cell--red">
+        <div class="metrics-cell-title">Milestone Gates</div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Y1 · 2026</span>
+          <span class="metrics-row-val">Anchor partner LOI</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Y2 · 2027</span>
+          <span class="metrics-row-val">Series A</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Series A gate</span>
+          <span class="metrics-row-val">NRR ≥110% · ARR ≥€1.24M</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Y3 · 2028</span>
+          <span class="metrics-row-val">Vitamins · EBITDA inflects</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row-label">Y4 · 2029</span>
+          <span class="metrics-row-val">EBITDA positive</span>
+        </div>
+        <div class="metrics-note">Each gate is a binary signal — either the business has earned the next round or it hasn't.</div>
+      </div>
+
     </div>
 
     <!-- Cash runway bar -->
