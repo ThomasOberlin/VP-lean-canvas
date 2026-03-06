@@ -1437,28 +1437,8 @@
     .charts-grid { gap: 1rem; }
   }
 </style>
-  <script type="text/javascript">
-    window.VP_EMAILJS_PUBLIC_KEY = "2HhEHDtm361XQsDYI";
-    window.VP_EMAILJS_READY = false;
-
-    window.vpInitEmailJS = function vpInitEmailJS() {
-      if (!window.emailjs || typeof window.emailjs.init !== 'function') {
-        console.error('EmailJS library is still unavailable after script load.');
-        return false;
-      }
-      try {
-        window.emailjs.init({ publicKey: window.VP_EMAILJS_PUBLIC_KEY });
-        window.VP_EMAILJS_READY = true;
-        console.log('EmailJS initialized successfully.');
-        return true;
-      } catch (err) {
-        console.error('EmailJS init failed:', err);
-        return false;
-      }
-    };
-  </script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="vpInitEmailJS()" onerror="console.error('Primary EmailJS CDN failed to load');"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js" onload="if (!window.VP_EMAILJS_READY) vpInitEmailJS()" onerror="console.error('Fallback EmailJS CDN failed to load');"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.iife.min.js"></script>
+  <script type="text/javascript">(function(){ emailjs.init({ publicKey: "2HhEHDtm361XQsDYI" }); })();</script>
 </head>
 <body>
 
@@ -3181,32 +3161,65 @@ function vpDetectFounder(text) {
 
 // ── EMAILJS CONTACT CAPTURE ──────────────────────────────────────────────
 function vpShowContactForm(messages) {
+  const existingForm = document.getElementById('vpContactForm');
+  if (existingForm) {
+    existingForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return existingForm;
+  }
+
   const form = document.createElement('div');
   form.className = 'vp-contact-form';
   form.id = 'vpContactForm';
   form.innerHTML = `
     <input type="text" id="vpContactName" placeholder="Your name" />
     <input type="text" id="vpContactDetails" placeholder="Email or WhatsApp number" />
-    <button class="vp-contact-submit" id="vpContactSubmit" onclick="vpSubmitContact()">Send to Onno &amp; Thomas</button>
+    <button class="vp-contact-submit" id="vpContactSubmit" type="button">Send to Onno &amp; Thomas</button>
   `;
   messages.appendChild(form);
+
+  const submitBtn = form.querySelector('#vpContactSubmit');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', vpSubmitContact);
+  }
+
   messages.scrollTop = messages.scrollHeight;
+  return form;
 }
 
 async function vpSubmitContact() {
-  const name = document.getElementById('vpContactName').value.trim();
-  const contact = document.getElementById('vpContactDetails').value.trim();
+  const form = document.getElementById('vpContactForm');
+  const nameInput = document.getElementById('vpContactName');
+  const contactInput = document.getElementById('vpContactDetails');
   const btn = document.getElementById('vpContactSubmit');
+
+  if (!form || !nameInput || !contactInput || !btn) {
+    console.error('Contact form is not available.', {
+      formExists: !!form,
+      nameExists: !!nameInput,
+      contactExists: !!contactInput,
+      buttonExists: !!btn
+    });
+    alert('The contact form is not ready yet. Please reopen it and try again.');
+    return;
+  }
+
+  const name = nameInput.value.trim();
+  const contact = contactInput.value.trim();
 
   if (!name || !contact) {
     alert('Please enter your name and a contact method.');
     return;
   }
 
+  if (!window.emailjs || typeof window.emailjs.send !== 'function') {
+    console.error('EmailJS is not available at submit time.');
+    alert('Email sending is not ready yet. Please refresh the page and try again.');
+    return;
+  }
+
   btn.disabled = true;
   btn.textContent = 'Sending…';
 
-  // Build interest summary from conversation history
   const interest = vpHistory
     .filter(m => m.role === 'user')
     .map(m => m.content)
@@ -3215,42 +3228,34 @@ async function vpSubmitContact() {
     .substring(0, 300);
 
   try {
-    await emailjs.send('service_ax4gndi', '4le7t0a', {
+    const result = await emailjs.send('service_ax4gndi', '4le7t0a', {
       name: name,
-      message: `Contact: ${contact}\nInterest summary: ${interest}`,
+      message: `Contact: ${contact}
+Interest summary: ${interest}`,
       time: new Date().toLocaleString('en-GB', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }) + ' UTC',
       title: 'VeriPura Investor Site'
     });
 
-    // Replace form with success message
-    const form = document.getElementById('vpContactForm');
+    console.log('EmailJS send success:', result);
     form.innerHTML = '<div class="vp-contact-success">✓ Sent! Onno and Thomas will be in touch shortly.</div>';
 
-    // Add confirmation to chat history so AI knows conversation is done
     vpHistory.push({ role: 'assistant', content: `Got it, ${name} — we have your details and will be in touch at the right time.` });
     vpHistory.push({ role: 'user', content: '[CONTACT DETAILS SUBMITTED — conversation complete. Do not ask further questions.]' });
 
-    // Disable chat input — conversation is complete
     const input = document.getElementById('vpInput');
     const sendBtn = document.getElementById('vpSendBtn');
     const micBtn = document.getElementById('vpMicBtn');
-    input.disabled = true;
-    input.placeholder = 'Onno and Thomas will be in touch soon.';
-    sendBtn.disabled = true;
+    if (input) {
+      input.disabled = true;
+      input.placeholder = 'Onno and Thomas will be in touch soon.';
+    }
+    if (sendBtn) sendBtn.disabled = true;
     if (micBtn) micBtn.disabled = true;
 
   } catch(err) {
     btn.disabled = false;
     btn.textContent = 'Send to Onno & Thomas';
     console.error('EmailJS error:', err);
-    if (err && typeof err === 'object') {
-      console.error('EmailJS error details:', {
-        status: err.status,
-        text: err.text,
-        message: err.message,
-        name: err.name
-      });
-    }
     alert('Something went wrong. Please email us directly at onno@veripura.com');
   }
 }
