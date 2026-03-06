@@ -1437,8 +1437,28 @@
     .charts-grid { gap: 1rem; }
   }
 </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.iife.min.js"></script>
-  <script type="text/javascript">(function(){ emailjs.init({ publicKey: "2HhEHDtm361XQsDYI" }); })();</script>
+  <script type="text/javascript">
+    window.VP_EMAILJS_PUBLIC_KEY = "2HhEHDtm361XQsDYI";
+    window.VP_EMAILJS_READY = false;
+
+    window.vpInitEmailJS = function vpInitEmailJS() {
+      if (!window.emailjs || typeof window.emailjs.init !== 'function') {
+        console.error('EmailJS library is still unavailable after script load.');
+        return false;
+      }
+      try {
+        window.emailjs.init({ publicKey: window.VP_EMAILJS_PUBLIC_KEY });
+        window.VP_EMAILJS_READY = true;
+        console.log('EmailJS initialized successfully.');
+        return true;
+      } catch (err) {
+        console.error('EmailJS init failed:', err);
+        return false;
+      }
+    };
+  </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="vpInitEmailJS()" onerror="console.error('Primary EmailJS CDN failed to load');"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js" onload="if (!window.VP_EMAILJS_READY) vpInitEmailJS()" onerror="console.error('Fallback EmailJS CDN failed to load');"></script>
 </head>
 <body>
 
@@ -3223,6 +3243,14 @@ async function vpSubmitContact() {
     btn.disabled = false;
     btn.textContent = 'Send to Onno & Thomas';
     console.error('EmailJS error:', err);
+    if (err && typeof err === 'object') {
+      console.error('EmailJS error details:', {
+        status: err.status,
+        text: err.text,
+        message: err.message,
+        name: err.name
+      });
+    }
     alert('Something went wrong. Please email us directly at onno@veripura.com');
   }
 }
