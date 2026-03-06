@@ -1337,6 +1337,29 @@
   }
   .vp-chat-send:hover { background: var(--blue); color: var(--white); }
   .vp-chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+  .vp-contact-form {
+    background: var(--pale); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 1rem; margin-top: 0.5rem;
+  }
+  .vp-contact-form input {
+    width: 100%; box-sizing: border-box;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 0.7rem; font-family: var(--font-sans);
+    font-size: 0.9rem; margin-bottom: 0.5rem; outline: none;
+  }
+  .vp-contact-form input:focus { border-color: var(--blue); }
+  .vp-contact-submit {
+    width: 100%; background: var(--navy); color: var(--gold);
+    border: none; border-radius: 8px; padding: 0.6rem;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    transition: background .15s;
+  }
+  .vp-contact-submit:hover { background: var(--blue); color: var(--white); }
+  .vp-contact-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .vp-contact-success {
+    color: #27AE60; font-size: 0.88rem; font-weight: 600;
+    text-align: center; padding: 0.4rem 0;
+  }
   .vp-mic-btn {
     background: none; border: 1.5px solid var(--border);
     border-radius: 8px; padding: 0.55rem 0.7rem;
@@ -1414,6 +1437,8 @@
     .charts-grid { gap: 1rem; }
   }
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("2HhEHDtm361XQsDYI");</script>
 </head>
 <body>
 
@@ -2344,7 +2369,7 @@
           <div class="milestone-dot"></div>
           <div>
             <div class="milestone-year">Q1 2027 — Y2</div>
-            <div class="milestone-text">Series A process launched at €1.24M ARR · 3 freight partners · Magic Number 16.5× · NRR ≥110%</div>
+            <div class="milestone-text">Series A process launched at €1.24M ARR (target Q1 2027) · 3 freight partners · Magic Number 16.5× · NRR ≥110%</div>
           </div>
         </div>
         <div class="milestone-item">
@@ -2933,6 +2958,8 @@ FOUNDER ROUTING — who speaks:
 
 IDENTIFICATION — FIRST MESSAGE ONLY: Start with ONE short phrase — "Onno here —" or "Thomas here —" — then answer immediately. Never mention your name, title or AI status again on any subsequent message. No exceptions. No re-introductions.
 
+DATE & TIMELINE ACCURACY — HARD RULE: The current year is 2026. Never reference "late 2025" or any past date as a future target. Series A target is Q1 2027. Always use only the dates and timelines explicitly stated in this prompt — never infer or estimate dates from context.
+
 RESPONSE LENGTH — HARD RULES:
 - Maximum 3 sentences per response. No exceptions.
 - Never dump financial metrics, regulatory details or product descriptions unless the person explicitly asked for them.
@@ -2941,11 +2968,10 @@ RESPONSE LENGTH — HARD RULES:
 
 ANSWER FIRST: Always answer the question asked completely before doing anything else. Ask one follow-up only if genuinely needed.
 
-MEETING INVITATION: When inviting someone to schedule, offer two options in one short message:
-1. Book directly via the calendar link: https://calendar.app.google/aDWSnVgPhiHtsj4L6
-2. Or if they prefer, they can leave their preferred contact details (WhatsApp number, email, etc.) in the chat and the founders will reach out.
-Keep it to 2 sentences maximum. Do not precede with pitch summaries, financial highlights or regulatory context.
-Example: "Want to connect with the team? You can book directly here: https://calendar.app.google/aDWSnVgPhiHtsj4L6 — or drop your preferred contact details in the chat and we'll reach out."
+MEETING INVITATION: First ask "Would you like to speak with Onno and Thomas directly?" — wait for their answer.
+- If YES: provide the calendar link: https://calendar.app.google/aDWSnVgPhiHtsj4L6
+- If NO or NOT YET: say "No problem — we can reach out to you instead. Just leave your name and preferred contact method below and the team will be in touch." This will trigger a contact form automatically.
+Keep responses to 2 sentences maximum. No pitch summaries before the invitation.
 
 CO-FOUNDER QUESTIONS: If the question specifically asks about or mentions a founder by name, THAT FOUNDER must answer — always in first person ("I", "my", "me"). If someone asks about Onno, Onno answers: "I've spent 15+ years...". If someone asks about Thomas, Thomas answers: "I've built six ventures...". Never have one founder describe the other founder's background in third person — the named founder always speaks for themselves.
 
@@ -2998,6 +3024,7 @@ VERIPURA CONTEXT:
 - NRR 110–118%, GRR 93–96%, logo churn 3–6%
 - Key mandates: EUDR (Dec 2026 large operators, Jun 2027 SMEs), FSMA 204 (full compliance Jul 2028), EU Farm to Fork (2026–2027), EU-Mercosur (provisionally applying Feb 2026)
 - Blockchain: IOTA — immutable tamper-proof document attestation. Do not elaborate on internal technical implementation
+- Current date: March 2026. Series A target: Q1 2027 at €1.24M ARR exit rate.
 - Traction: working prototype built, financial model complete, IOTA Foundation engagement active, freight forwarder pipeline in progress, Dutch and Swiss SME importer outreach underway
 - Two live applets available for free trial at veripura.com/applets.html:
   1. VeriPura Label (label.veripura.com) — checks food labels meet legal requirements, validates ingredients, nutritional claims, allergens and regulatory compliance across markets
@@ -3125,6 +3152,64 @@ function vpDetectFounder(text) {
 
   if (thomasScore > onnoScore) return { key: 'thomas', name: 'Thomas Oberlin' };
   return { key: 'onno', name: 'Onno Stienen' };
+}
+
+// ── EMAILJS CONTACT CAPTURE ──────────────────────────────────────────────
+function vpShowContactForm(messages) {
+  const form = document.createElement('div');
+  form.className = 'vp-contact-form';
+  form.id = 'vpContactForm';
+  form.innerHTML = `
+    <input type="text" id="vpContactName" placeholder="Your name" />
+    <input type="text" id="vpContactDetails" placeholder="Email or WhatsApp number" />
+    <button class="vp-contact-submit" id="vpContactSubmit" onclick="vpSubmitContact()">Send to Onno &amp; Thomas</button>
+  `;
+  messages.appendChild(form);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+async function vpSubmitContact() {
+  const name = document.getElementById('vpContactName').value.trim();
+  const contact = document.getElementById('vpContactDetails').value.trim();
+  const btn = document.getElementById('vpContactSubmit');
+
+  if (!name || !contact) {
+    alert('Please enter your name and a contact method.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  // Build interest summary from conversation history
+  const interest = vpHistory
+    .filter(m => m.role === 'user')
+    .map(m => m.content)
+    .slice(-4)
+    .join(' | ')
+    .substring(0, 300);
+
+  try {
+    await emailjs.send('service_9r399c2', '4le7t0a', {
+      name: name,
+      message: `Contact: ${contact}\nInterest summary: ${interest}`,
+      time: new Date().toLocaleString('en-GB', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }) + ' UTC',
+      title: 'VeriPura Investor Site'
+    });
+
+    // Replace form with success message
+    const form = document.getElementById('vpContactForm');
+    form.innerHTML = '<div class="vp-contact-success">✓ Sent! Onno and Thomas will be in touch shortly.</div>';
+
+    // Add confirmation to chat
+    vpHistory.push({ role: 'assistant', content: `Got it, ${name} — the team will reach out to you shortly.` });
+
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = 'Send to Onno & Thomas';
+    console.error('EmailJS error:', err);
+    alert('Something went wrong. Please email us directly at onno@veripura.com');
+  }
 }
 
 function vpGetTimezoneContext() {
