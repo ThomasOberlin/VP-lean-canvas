@@ -1440,19 +1440,6 @@
     .charts-grid { gap: 1rem; }
   }
 </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    window.addEventListener('load', function () {
-      if (window.emailjs && typeof window.emailjs.init === 'function') {
-        emailjs.init({ publicKey: '2HhEHDtm361XQsDYI' });
-        console.log('EmailJS initialized successfully.');
-      } else {
-        console.error('EmailJS failed to load.');
-      }
-    });
-  </script>
-</head>
-<body>
 
 <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
 <header class="site-header">
@@ -3433,7 +3420,19 @@ async function vpSend() {
   input.focus();
 }
 </script>
-
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function () {
+      if (window.emailjs && typeof window.emailjs.init === 'function') {
+        emailjs.init({ publicKey: '2HhEHDtm361XQsDYI' });
+        console.log('EmailJS initialized successfully.');
+      } else {
+        console.error('EmailJS failed to load.');
+      }
+    });
+  </script>
+</head>
+<body>
 
 </body>
 </html>
